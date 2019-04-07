@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">ECO Holiday</string>
+    <string name="title_activity_maps">ECO Holiday</string>
+
+
+    <string-array name="NationalParks">
+        <item>Alfred National Park</item>
+        <item>Alpine National Park</item>
+        <item>Barmah National Park</item>
+        <item>Baw Baw National Park</item>
+        <item>Brisbane Ranges National Park</item>
+        <item>Burrowa - Pine Mountain National Park</item>
+        <item>Chiltern-Mt Pilot National Park</item>
+        <item>Churchill National Park</item>
+        <item>Cobboboonee National Park</item>
+
+    </string-array>
+
+    <string-array name="Area">
+        <item>3,022</item>
+        <item>662,305</item>
+        <item>28,437</item>
+        <item>12,778</item>
+        <item>8,880</item>
+        <item>18,964</item>
+        <item>21,666</item>
+        <item>272</item>
+        <item>18,525</item>
+
+    </string-array>
+
+    <string-array name="Latitude">
+        <item>-37.5721</item>
+        <item>-37.0317</item>
+        <item>-35.8861</item>
+        <item>-37.8537</item>
+        <item>-37.8411</item>
+        <item>-36.0855</item>
+        <item>-36.2488</item>
+        <item>-37.9501</item>
+        <item>-38.1144</item>
+
+    </string-array>
+
+    <string-array name="Longitude">
+        <item>149.3627</item>
+        <item>147.3367</item>
+        <item>145.0761</item>
+        <item>146.3402</item>
+        <item>144.2397</item>
+        <item>147.7447</item>
+        <item>146.6830</item>
+        <item>145.2604</item>
+        <item>141.4400</item>
+
+    </string-array>
+
+    <string-array name="Distance">
+        <item>322</item>
+        <item>605</item>
+        <item>237</item>
+        <item>178</item>
+        <item>80</item>
+        <item>14</item>
+        <item>266</item>
+        <item>272</item>
+        <item>125</item>
+
+    </string-array>
+</resources>
