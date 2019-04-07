@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
                                     "(NationalPark, Area, Latitude, Longitude,Distance,Status,CreatedDateTime)\n" +
                                     "VALUES \n" +
                                     "('"+NationalParks.get(i)+"'," +
-                                    " '"+Area.get(i)+"'," +
+                                    " '"+Double.parseDouble(Area.get(i))+"'," +
                                     " '"+Latitude.get(i)+"'," +
                                     " '"+Longitude.get(i)+"'," +
                                     " "+Double.parseDouble(Distance.get(i))+"," +

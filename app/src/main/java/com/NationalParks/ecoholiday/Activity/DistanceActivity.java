@@ -134,10 +134,18 @@ public class DistanceActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             String z = "SUCCESS";
+            int newArea = 0;
+            if(DaysCount == 1){newArea = 8000;}
+            else if(DaysCount == 2){newArea = 18000;}
+            else if (DaysCount == 3){newArea = 21000;}
+            else if (DaysCount == 4){newArea = 28000;}
+            else {newArea = 700000;}
+
+
 
             try{
 
-                String query = "select * from tbl_NationalParksList where Distance <="+DistCount+" and Area <= '6000' order by Distance ASC";
+                String query = "select * from tbl_NationalParksList where Distance <="+DistCount+" and CAST(Area as int) <= "+newArea+" order by Distance ASC";
                 Cursor cursorRoom = mDatabase.rawQuery(query, null);
 
                 if(cursorRoom.moveToFirst()){
