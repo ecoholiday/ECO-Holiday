@@ -71,6 +71,7 @@ public class DistanceActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 distanceCount.setText(progress+"");
                 DistCount = progress;
+                //
             }
 
             @Override
@@ -80,7 +81,7 @@ public class DistanceActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                //new GetParksData().execute();
+                new GetParksData().execute();
 
             }
 
@@ -135,13 +136,12 @@ public class DistanceActivity extends AppCompatActivity {
 
             String z = "SUCCESS";
             int newArea = 0;
+
             if(DaysCount == 1){newArea = 8000;}
             else if(DaysCount == 2){newArea = 18000;}
             else if (DaysCount == 3){newArea = 21000;}
             else if (DaysCount == 4){newArea = 28000;}
             else {newArea = 700000;}
-
-
 
             try{
 
@@ -179,7 +179,7 @@ public class DistanceActivity extends AppCompatActivity {
                     viewData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                           // Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_LONG).show();
+                            // Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_LONG).show();
                             ParkItems parkListItem = ParksList.get(position);
                             SharedPreferences.Editor editor = sharedpreferences.edit();
                             editor.putString("ParkLatitude",parkListItem.getLatitude());
