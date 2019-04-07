@@ -53,28 +53,66 @@
             android:layout_margin="10dp"
             android:max="1000" />
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/img_search"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+            <TextView
+                android:id="@+id/days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:text="Days"
+                android:textColor="#F9AA33"
+                android:textSize="20dp" />
+
+
+
+            <TextView
+                android:id="@+id/day_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="0dp"
-                android:src="@drawable/search" />
+                android:text="5"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+
         </RelativeLayout>
-
-        <ListView
-            android:id="@+id/view_list"
+        <SeekBar
+            android:id="@+id/seek_days"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/days"
+            android:progress="5"
+            android:layout_margin="10dp"
+            android:max="5" />
 
-        </ListView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_search"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_centerInParent="true"
+
+                        android:layout_marginRight="0dp"
+                        android:src="@drawable/search" />
+                </RelativeLayout>
+
+                <ListView
+                    android:id="@+id/view_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                </ListView>
 
 
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>

@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.NationalParks.ecoholiday.Adapter.ParksAdapter;
 import com.NationalParks.ecoholiday.Item.ParkItems;
 import com.NationalParks.ecoholiday.R;
+import com.google.android.gms.nearby.messages.Distance;
 
 
 import java.util.ArrayList;
@@ -30,10 +31,13 @@ import java.util.ArrayList;
 public class DistanceActivity extends AppCompatActivity {
     SQLiteDatabase mDatabase;
     TextView distanceCount;
+    TextView dayCount;
     ImageView imgSearch;
     SeekBar seekDistance;
+    SeekBar seekDays;
     ListView viewData;
     int DistCount=1000;
+    int DaysCount=5;
     SharedPreferences sharedpreferences;
     private ProgressDialog pDialog;
     public static ArrayList<ParkItems> ParksList ;
@@ -49,8 +53,10 @@ public class DistanceActivity extends AppCompatActivity {
         sharedpreferences = getSharedPreferences(MainActivity.MyPREFERENCES, Context.MODE_PRIVATE);
 
         distanceCount = (TextView) findViewById(R.id.count);
+        dayCount = (TextView) findViewById(R.id.day_count);
         imgSearch = (ImageView) findViewById(R.id.img_search);
         seekDistance = (SeekBar) findViewById(R.id.seek_distance);
+        seekDays = (SeekBar) findViewById(R.id.seek_days);
         viewData = (ListView) findViewById(R.id.view_list);
 
         ParksList = new ArrayList<ParkItems>();
@@ -65,7 +71,6 @@ public class DistanceActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 distanceCount.setText(progress+"");
                 DistCount = progress;
-                //
             }
 
             @Override
@@ -75,18 +80,39 @@ public class DistanceActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                new GetParksData().execute();
+                //new GetParksData().execute();
 
             }
 
         });
 
-       /* imgSearch.setOnClickListener(new View.OnClickListener() {
+        seekDays.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                dayCount.setText(progress+"");
+                DaysCount = progress;
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                //new GetParksData().execute();
+
+            }
+
+        });
+
+        imgSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new GetParksData().execute();
             }
-        }); */
+        });
 
 
 
@@ -111,7 +137,7 @@ public class DistanceActivity extends AppCompatActivity {
 
             try{
 
-                String query = "select * from tbl_NationalParksList where Distance <="+DistCount+" order by Distance ASC";
+                String query = "select * from tbl_NationalParksList where Distance <="+DistCount+" and Area <= '6000' order by Distance ASC";
                 Cursor cursorRoom = mDatabase.rawQuery(query, null);
 
                 if(cursorRoom.moveToFirst()){
