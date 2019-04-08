@@ -81,7 +81,7 @@ public class DistanceActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                new GetParksData().execute();
+                //new GetParksData().execute();
 
             }
 
