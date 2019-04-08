@@ -26,10 +26,11 @@ public class PlanHoliday extends AppCompatActivity {
             }
         });
 
-        ImageView imgStats = (ImageView)findViewById(R.id.imgStats);
+        final ImageView imgStats = (ImageView)findViewById(R.id.imgStats);
         imgStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //imgStats.
                 Intent intentStats = new Intent(PlanHoliday.this, Statistics.class);
                 startActivity(intentStats);
             }
@@ -45,6 +46,14 @@ public class PlanHoliday extends AppCompatActivity {
         });
         ImageView imgCycling = (ImageView)findViewById(R.id.imgCycling);
         imgCycling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentStats = new Intent(PlanHoliday.this, Cycling.class);
+                startActivity(intentStats);
+            }
+        });
+        ImageView imgCamping = (ImageView)findViewById(R.id.imgCamping);
+        imgCamping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentStats = new Intent(PlanHoliday.this, Cycling.class);

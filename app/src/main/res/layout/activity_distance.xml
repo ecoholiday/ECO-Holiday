@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_weight="1"
-                android:text="Distance"
+                android:text="Distance(KMs)"
                 android:textColor="#F9AA33"
                 android:textSize="20dp" />
 
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_weight="1"
-                android:text="Days"
+                android:text="Days of holiday (to filter the park area)"
                 android:textColor="#F9AA33"
                 android:textSize="20dp" />
 
