@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.NationalParks.ecoholiday.R;
@@ -15,15 +16,15 @@ public class LandingPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
 
-        ImageButton imgGetStarted = (ImageButton) findViewById(R.id.imgGetStarted);
-        imgGetStarted.setOnClickListener(new View.OnClickListener() {
+        Button btnGetStarted = (Button)findViewById(R.id.btnGetStarted);
+        btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentGetStarted = new Intent(LandingPage.this,MainActivity.class);
-                startActivity(intentGetStarted);
-
+                Intent intent = new Intent(LandingPage.this,PlanHoliday.class);
+                startActivity(intent);
             }
         });
+
 
     }
 }

@@ -4,95 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/landing_page1"
+    android:background="@drawable/landing_page_back"
     tools:context=".Activity.LandingPage">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Eco-Holiday"
-        app:titleTextColor="#ffa500">
-    </android.support.v7.widget.Toolbar>
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtLandingPage1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="20dp"
-        android:text="This application helps you with eco-living and money saving by making few changes to regular holiday plans."
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#000000"
-        android:textStyle="bold|italic"
-        android:layout_below="@+id/toolbar"/>
-
-    <TextView
-        android:id="@+id/txtLandingPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:paddingTop="2dp"
-        android:paddingLeft="20dp"
-        android:text="          There are many options to plan your holiday, why not contribute to the environment protection mean-while saving good money."
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#000000"
-        android:textStyle="bold|italic"
-        android:layout_below="@+id/txtLandingPage1" />
-
-    <TextView
-        android:id="@+id/txtLandingPageGetStarted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:textColor="#ffa500"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="10dp"
-        android:text="Get Started"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold|italic"
-        android:layout_below="@+id/txtLandingPage"/>
-
-    <ImageButton
-        android:id="@+id/imgGetStarted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="1dp"
-        android:src="@drawable/get_started"
-        android:layout_toRightOf="@+id/txtLandingPageGetStarted"
-        android:layout_below="@id/txtLandingPage"
-        app:layout_constraintStart_toEndOf="@+id/txtLandingPageGetStarted"
-        app:layout_constraintTop_toBottomOf="@+id/txtLandingPage" />
-
-
-
-    <ViewFlipper
-        android:id="@+id/viewFlipper"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autoStart="true"
-        android:layout_below="@id/imgGetStarted">
-        <ImageView
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txtEcoholiday"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/landing_camp"/>
-        <ImageView
-            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="eco-holiday"
+            android:textColor="#ffffff"
+            android:textSize="56sp"
+            android:textStyle="bold|italic"
+            android:typeface="serif"
+            app:fontFamily="serif" />
+        <TextView
+            android:id="@+id/txtLandingPlan"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/landing_hiking"/>
-        <ImageView
-            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="plan a holiday"
+            android:textColor="#ffffff"
+            android:textSize="40dp"
+            android:typeface="serif"
+            app:fontFamily="cursive" />
+        <TextView
+            android:id="@+id/txtLandingMoney"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/landing_cycle"/>
-    </ViewFlipper>
+            android:gravity="center"
+            android:text="save money"
+            android:textColor="#ffffff"
+            android:textSize="40dp"
+            android:typeface="serif"
+            app:fontFamily="cursive" />
+        <TextView
+            android:id="@+id/txtLandingEnvi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="save environment"
+            android:textColor="#ffffff"
+            android:textSize="40dp"
+            android:typeface="serif"
+            app:fontFamily="cursive" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btnGetStarted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/get_staretd_button"
+            android:gravity="center"
+            android:text="get started"
+            android:textColor="#ffffff"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="36sp"
+            app:fontFamily="serif"
+            android:textStyle="bold|italic"/>
+    </LinearLayout>
+
 
 </RelativeLayout>
