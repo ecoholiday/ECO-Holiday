@@ -74,35 +74,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView imgStats = (ImageView)findViewById(R.id.imgStats);
-        imgStats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentStats = new Intent(MainActivity.this, Statistics.class);
-                startActivity(intentStats);
-            }
-        });
-
-        ImageView imgHiking = (ImageView)findViewById(R.id.imgHiking);
-        imgHiking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentStats = new Intent(MainActivity.this, Cycling.class);
-                startActivity(intentStats);
-            }
-        });
-        ImageView imgCycling = (ImageView)findViewById(R.id.imgCycling);
-        imgCycling.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentStats = new Intent(MainActivity.this, Cycling.class);
-                startActivity(intentStats);
-            }
-        });
-
-
-
-
         //btnHoliday = (Button) findViewById(R.id.plan_holiday);
         nationalPark = findViewById(R.id.imgNationalPark);
 
@@ -121,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Tables Created", Toast.LENGTH_LONG).show();
 
         } else {
-            Toast.makeText(getApplicationContext(), "Tables Created Fail", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Error has occured. Please try again", Toast.LENGTH_LONG).show();
 
         }
 
@@ -318,9 +289,9 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             if(z=="SUCCESS"){
-                Toast.makeText(getApplicationContext(),"Data Loading Completed.",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),"Data Loading Completed.",Toast.LENGTH_LONG).show();
             }else{
-                Toast.makeText(getApplicationContext(),"Data Loading Fail",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Data Loading Fail. Please try again",Toast.LENGTH_LONG).show();
             }
 
 
