@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+}
+    div#VicPie {
+      border: 2px solid white;
+      border-radius: 25px;
+      width: auto;
+      height: 500px;
+      margin: auto;
+      background-color: #3d5f8c;
+    }
+
+
+svg {
+	width: 100%;
+	height: 100%;
+}
+
+path.slice{
+	stroke-width:2px;
+}
+
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+}
+.wrapper {
+    text-align: center;
+}
+
+button#btnReset {
+    position: absolute;
+    top: 50%;
+}
+h6{
+text-align: center;
+}
+
+</style>
+<body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<div id="VicPie">
+    <div class="wrapper">
+        <button id="btnReset" onclick="resetClick()">reset</button>
+    </div>
+</div>
+
+
+
+<script>
+
+document.getElementById("btnReset").style.visibility = "hidden";
+function resetClick() {
+  document.getElementById("btnReset").style.visibility = "hidden";
+  change(vicData);
+}
+
+var parentWidth = document.getElementById("VicPie");
+
+var svg = d3.select("#VicPie")
+	.append("svg")
+	.append("g")
+
+svg.append("g")
+	.attr("class", "slices");
+svg.append("g")
+	.attr("class", "labels");
+svg.append("g")
+	.attr("class", "lines");
+
+var width = parentWidth.clientWidth ,
+    height = parentWidth.clientHeight,
+	radius = Math.min(width, height) / 2;
+
+var pie = d3.layout.pie()
+	.sort(null)
+	.value(function(d) {
+		return d.value;
+	});
+
+var arc = d3.svg.arc()
+	.outerRadius(radius * 0.8)
+	.innerRadius(radius * 0.4);
+
+var outerArc = d3.svg.arc()
+	.innerRadius(radius * 0.9)
+	.outerRadius(radius * 0.9);
+
+svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var key = function(d){ return d.data.label; };
+
+var vicData = [{"label":"Agriculture","value" : 13.88},
+{"label":"Waste","value" : 2.55},
+{"label":"Industrial","value" : 4.11},
+{"label":"Transport","value" : 22.26},
+{"label":"Combustion","value" : 18.47},
+{"label":"Electricity","value" : 59.23}
+]
+
+var combustData = [{"label":"Residential","value" : 6.31713},
+{"label":"Manufacturing","value" : 5.89872},
+{"label":"Fuel","value" : 3.11961},
+{"label":"Commercial","value" : 2.13472},
+{"label":"Forestry","value" : 0.99482}]
+
+var transData = [{"label":"Cars","value" : 11.16793},
+{"label":"Heavy-duty","value" : 5.00084},
+{"label":"Light","value" : 3.73821},
+{"label":"Motorcycles","value" : 0.0721},
+{"label":"Aviation","value" : 1.42344},
+{"label":"Navigation","value" : 0.39607},
+{"label":"Railways","value" : 0.3557}]
+
+var agriData = [{"label":"Fermentation","value" : 9.44072670111727},
+{"label":"Manure","value" : 1.13417812723513},
+{"label":"Soils","value" : 2.74898541729678},
+{"label":"Liming","value" : 0.189381470049188},
+{"label":"Urea","value" : 0.3303754696}]
+
+var wasteData = [{"label":"Waste disposal ","value" : 1.64798279976371},
+{"label":"Biological ","value" : 0.0698127137635578},
+{"label":"Incineration","value" : 0.0172179983726607},
+{"label":"Water treatment","value" : 0.813995975632379}]
+
+var indusData = [{"label":"Manufacturing","value" : 1.8},
+{"label":"Mining","value" : 2.3}]
+
+var elecData = [{"label":"Domestic","value" : 50.622},
+{"label":"Construction","value" : 8.58}]
+
+
+
+var color = d3.scale.ordinal()
+	.domain(["Lorem ipsum", "dolor sit"])
+	//.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+	.range(["#eeff00", "#ff0022", "#2200ff"]);
+
+change(vicData);
+
+
+
+function change(data) {
+
+	/* ------- PIE SLICES -------*/
+	var vicPieChart = svg.select(".slices").selectAll("path.slice")
+		.data(pie(data), key);
+
+	vicPieChart.enter()
+		.insert("path")
+		.style("fill", function(d) { return color(d.data.label); })
+		.attr("class", "slice")
+
+	vicPieChart
+		.transition().duration(1000)
+		.attrTween("d", function(d) {
+			this._current = this._current || d;
+			var interpolate = d3.interpolate(this._current, d);
+			this._current = interpolate(0);
+			return function(t) {
+				return arc(interpolate(t));
+			};
+		})
+
+	vicPieChart.on('mouseenter',function(d,i){
+		d3.select(this)
+          .attr('opacity', 0.6);
+
+		  document.getElementById("btnReset").style.visibility = "visible";
+			changeDataOnMouse(d.data.label);
+
+		  })
+
+	vicPieChart.exit()
+		.remove();
+
+	/* ------- TEXT LABELS -------*/
+
+	var text = svg.select(".labels").selectAll("text")
+		.data(pie(data), key);
+
+	text.enter()
+		.append("text")
+		.attr("dy", ".35em")
+		.text(function(d) {
+			//return (d.data.label + " \n("+d.data.value + ")");
+			return (d.data.label);
+		})
+		.style("fill", 'white')
+
+	function midAngle(d){
+		return d.startAngle + (d.endAngle - d.startAngle)/2;
+	}
+
+	text.transition().duration(1000)
+		.attrTween("transform", function(d) {
+			this._current = this._current || d;
+			var interpolate = d3.interpolate(this._current, d);
+			this._current = interpolate(0);
+			return function(t) {
+				var d2 = interpolate(t);
+				var pos = arc.centroid(d2);
+				console.log(pos);
+				console.log(d2);
+				//var pos1 = pos[1];
+				//pos[1] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
+				//pos[1] = pos[0];
+				if (pos[1] >0){
+				pos[1] = pos[1] + height/6 +10;
+				}
+				else{
+				pos[1] = pos[1] - height/6 -10 ;
+				}
+
+				//console.log(pos);
+				return "translate("+ pos +")";
+			};
+		})
+		.styleTween("text-anchor", function(d){
+			this._current = this._current || d;
+			var interpolate = d3.interpolate(this._current, d);
+			this._current = interpolate(0);
+			return function(t) {
+				var d2 = interpolate(t);
+				return midAngle(d2) < Math.PI ? "start":"end";
+			};
+		});
+
+
+	text.exit()
+		.remove();
+
+	/* ------- SLICE TO TEXT POLYLINES -------*/
+
+	var polyline = svg.select(".lines").selectAll("polyline")
+		.data(pie(data), key);
+
+	polyline.enter()
+		.append("polyline");
+
+	polyline.transition().duration(1000)
+		.attrTween("points", function(d){
+			this._current = this._current || d;
+			var interpolate = d3.interpolate(this._current, d);
+			this._current = interpolate(0);
+			return function(t) {
+				var d2 = interpolate(t);
+				var pos = arc.centroid(d2);
+				if (pos[1] >0){
+				pos[1] = pos[1] + height/6;
+				}
+				else{
+				pos[1] = pos[1] - height/6;
+				}
+				/*var pos1 = pos[1];
+				pos[1] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
+				pos[0] = pos1; */
+				return [arc.centroid(d2),  pos];
+			};
+		});
+
+	polyline.exit()
+		.remove();
+};
+
+function changeDataOnMouse(item){
+
+var newData;
+
+if (item == "Combustion"){
+	newData = combustData;
+}else if (item == "Waste"){
+	newData = wasteData;
+}else if (item == "Industrial"){
+	newData = indusData;
+}else if (item == "Transport"){
+	newData = transData;
+}else if (item == "Electricity"){
+	newData = elecData;
+}else if (item == "Agriculture"){
+	newData = agriData;
+}
+if (newData){
+change(newData);
+}
+
+};
+
+
+</script>
+</body>

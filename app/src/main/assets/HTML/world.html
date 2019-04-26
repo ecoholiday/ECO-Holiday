@@ -1,0 +1,530 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="http://d3js.org/d3.v4.js"></script>
+
+<!-- Add 2 buttons -->
+<div id='container'>
+    <div align="center">
+        <select id = "countrySelected" onchange="getGraph()">
+            <option value="AUS" selected="selected" >Australia</option>
+            <option value="CND">Canada</option>
+            <option value="CHN">China</option>
+            <option value="GER">Germany</option>
+            <option value="IND">India</option>
+            <option value="ITY">Italy</option>
+            <option value="JPN">Japan</option>
+            <option value="MLY">Malaysia</option>
+            <option value="PAK">Pakistan</option>
+            <option value="SAF">South Africa</option>
+            <option value="UAE">UAE</option>
+            <option value="UK">United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="VTN">Vietnam</option>
+
+        </select>
+    </div>
+    <div id="worldBars"></div>
+    <svg />
+</div>
+
+
+<style>
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      border-radius: 20px;
+    }
+
+    div#container {
+      border: 2px solid white;
+      border-radius: 25px;
+      width: auto;
+      height: 300px;
+      margin: auto;
+      background-color: #3d5f8c;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .bar {
+      fill: #80cbc4;
+    }
+
+    text {
+      font-size: 15px;
+      fill: #fff;
+    }
+
+
+    line {
+      stroke: gray;
+    }
+
+    line#limit {
+      stroke: #FED966;
+      stroke-width: 1;
+      stroke-dasharray: 3 6;
+    }
+
+    text.diff {
+      font-size: 10px;
+      fill: #2F4A6D;
+    }
+
+    text.value {
+      font-size: 10px;
+    }
+
+    text.title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    text.label {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .tooltip {
+    position: absolute;
+        text-align: center;
+        width: 40px;
+        height: 20px;
+        padding: 2px;
+        display : none;
+        font: 12px sans-serif;
+        background: lightsteelblue;
+        border: 0px;
+        border-radius: 5px;
+        pointer-events: none;
+    top: 95px;
+    }
+
+
+    </style>
+
+
+
+<script>
+
+    var parentWidth = document.getElementById("container");
+
+    // set the dimensions and margins of the graph
+    var margin = {top: 30, right: 30, bottom: 70, left: 60},
+        width = parentWidth.clientWidth - margin.left - margin.right,
+        height = parentWidth.clientHeight - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg = d3.select("#worldBars")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+    // Initialize the X axis
+    var x = d3.scaleBand()
+      .range([ 0, width ])
+      .padding(0.2);
+    var xAxis = svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+
+    // Initialize the Y axis
+    var y = d3.scaleLinear()
+      .range([ height, 0]);
+    var yAxis = svg.append("g")
+      .attr("class", "myYaxis")
+
+    svg.append('text')
+        .attr('class', 'label')
+        .attr("x", width / 2 )
+        .attr("y",  height + margin.bottom)
+        .text("year")
+
+    svg.append('text')
+          .attr('class', 'title')
+          .attr('x', width / 2)
+          .attr('y', -10)
+          .attr('text-anchor', 'middle')
+          .text('Percapita emissions over the years')
+
+    function getGraph() {
+
+      // Parse the Data
+      var selectedVar = document.getElementById("countrySelected").value;
+
+        const data = [
+      {
+        "year": "2000",
+        "CHN": 2.7,
+        "UAE": 35.68,
+        "US": 20.18,
+        "AUS": 17.2,
+        "CND": 17.37,
+        "JPN": 9.62,
+        "IND": 0.98,
+        "UK": 9.2,
+        "PLI": 0.94,
+        "MLY": 5.42,
+        "PAK": 0.77,
+        "VTN": 0.67,
+        "SAF": 8.28,
+        "ITY": 7.91,
+        "GER": 10.1
+      },
+      {
+        "year": "2001",
+        "CHN": 2.74,
+        "UAE": 30.49,
+        "US": 19.64,
+        "AUS": 16.73,
+        "CND": 16.99,
+        "JPN": 9.46,
+        "IND": 0.97,
+        "UK": 9.23,
+        "PLI": 0.89,
+        "MLY": 5.72,
+        "PAK": 0.76,
+        "VTN": 0.75,
+        "SAF": 8.02,
+        "ITY": 7.9,
+        "GER": 10.37
+      },
+      {
+        "year": "2002",
+        "CHN": 3.01,
+        "UAE": 24.15,
+        "US": 19.61,
+        "AUS": 17.37,
+        "CND": 16.56,
+        "JPN": 9.57,
+        "IND": 0.97,
+        "UK": 8.9,
+        "PLI": 0.88,
+        "MLY": 5.53,
+        "PAK": 0.79,
+        "VTN": 0.86,
+        "SAF": 7.58,
+        "ITY": 7.93,
+        "GER": 10.06
+      },
+      {
+        "year": "2003",
+        "CHN": 3.52,
+        "UAE": 28.55,
+        "US": 19.56,
+        "AUS": 16.9,
+        "CND": 17.46,
+        "JPN": 9.73,
+        "IND": 0.99,
+        "UK": 9.05,
+        "PLI": 0.86,
+        "MLY": 6.41,
+        "PAK": 0.8,
+        "VTN": 0.95,
+        "SAF": 8.49,
+        "ITY": 8.17,
+        "GER": 9.97
+      },
+      {
+        "year": "2004",
+        "CHN": 4.04,
+        "UAE": 27.7,
+        "US": 19.66,
+        "AUS": 17.03,
+        "CND": 17.26,
+        "JPN": 9.91,
+        "IND": 1.03,
+        "UK": 8.99,
+        "PLI": 0.87,
+        "MLY": 6.51,
+        "PAK": 0.87,
+        "VTN": 1.08,
+        "SAF": 9.33,
+        "ITY": 8.22,
+        "GER": 9.9
+      },
+      {
+        "year": "2005",
+        "CHN": 4.52,
+        "UAE": 25.36,
+        "US": 19.59,
+        "AUS": 17.17,
+        "CND": 17.25,
+        "JPN": 9.7,
+        "IND": 1.07,
+        "UK": 8.98,
+        "PLI": 0.87,
+        "MLY": 6.8,
+        "PAK": 0.89,
+        "VTN": 1.16,
+        "SAF": 8.54,
+        "ITY": 8.17,
+        "GER": 9.67
+      },
+      {
+        "year": "2006",
+        "CHN": 4.98,
+        "UAE": 23.63,
+        "US": 19.09,
+        "AUS": 17.65,
+        "CND": 16.7,
+        "JPN": 9.63,
+        "IND": 1.12,
+        "UK": 8.9,
+        "PLI": 0.77,
+        "MLY": 6.41,
+        "PAK": 0.93,
+        "VTN": 1.21,
+        "SAF": 9.07,
+        "ITY": 8.07,
+        "GER": 9.91
+      },
+      {
+        "year": 2007,
+        "CHN": 5.33,
+        "UAE": 22.44,
+        "US": 19.22,
+        "AUS": 17.87,
+        "CND": 16.86,
+        "JPN": 9.78,
+        "IND": 1.19,
+        "UK": 8.62,
+        "PLI": 0.81,
+        "MLY": 6.94,
+        "PAK": 0.99,
+        "VTN": 1.22,
+        "SAF": 9.35,
+        "ITY": 7.92,
+        "GER": 9.49
+      },
+      {
+        "year": 2008,
+        "CHN": 5.7,
+        "UAE": 22.82,
+        "US": 18.46,
+        "AUS": 18.16,
+        "CND": 16.88,
+        "JPN": 9.45,
+        "IND": 1.31,
+        "UK": 8.42,
+        "PLI": 0.87,
+        "MLY": 7.53,
+        "PAK": 0.97,
+        "VTN": 1.36,
+        "SAF": 9.85,
+        "ITY": 7.6,
+        "GER": 9.51
+      },
+      {
+        "year": 2009,
+        "CHN": 6.01,
+        "UAE": 21.91,
+        "US": 17.16,
+        "AUS": 18.2,
+        "CND": 15.96,
+        "JPN": 8.62,
+        "IND": 1.43,
+        "UK": 7.57,
+        "PLI": 0.84,
+        "MLY": 7.2,
+        "PAK": 0.95,
+        "VTN": 1.47,
+        "SAF": 9.87,
+        "ITY": 6.8,
+        "GER": 8.82
+      },
+      {
+        "year": 2010,
+        "CHN": 6.56,
+        "UAE": 19.44,
+        "US": 17.44,
+        "AUS": 17.74,
+        "CND": 15.72,
+        "JPN": 9.15,
+        "IND": 1.4,
+        "UK": 7.86,
+        "PLI": 0.91,
+        "MLY": 7.77,
+        "PAK": 0.95,
+        "VTN": 1.61,
+        "SAF": 9.19,
+        "ITY": 6.84,
+        "GER": 9.28
+      },
+      {
+        "year": 2011,
+        "CHN": 7.24,
+        "UAE": 19.08,
+        "US": 16.97,
+        "AUS": 17.54,
+        "CND": 15.64,
+        "JPN": 9.32,
+        "IND": 1.48,
+        "UK": 7.08,
+        "PLI": 0.9,
+        "MLY": 7.7,
+        "PAK": 0.93,
+        "VTN": 1.7,
+        "SAF": 9,
+        "ITY": 6.7,
+        "GER": 9.12
+      },
+      {
+        "year": 2012,
+        "CHN": 7.42,
+        "UAE": 19.82,
+        "US": 16.3,
+        "AUS": 17.07,
+        "CND": 14.89,
+        "JPN": 9.64,
+        "IND": 1.6,
+        "UK": 7.36,
+        "PLI": 0.94,
+        "MLY": 7.5,
+        "PAK": 0.92,
+        "VTN": 1.57,
+        "SAF": 8.85,
+        "ITY": 6.21,
+        "GER": 9.2
+      },
+      {
+        "year": 2013,
+        "CHN": 7.56,
+        "UAE": 18.95,
+        "US": 16.31,
+        "AUS": 16.08,
+        "CND": 14.71,
+        "JPN": 9.78,
+        "IND": 1.59,
+        "UK": 7.15,
+        "PLI": 1,
+        "MLY": 7.96,
+        "PAK": 0.9,
+        "VTN": 1.61,
+        "SAF": 8.67,
+        "ITY": 5.73,
+        "GER": 9.39
+      },
+      {
+        "year": 2014,
+        "CHN": 7.54,
+        "UAE": 23.3,
+        "US": 16.49,
+        "AUS": 15.37,
+        "CND": 15.12,
+        "JPN": 9.54,
+        "IND": 1.73,
+        "UK": 6.5,
+        "PLI": 1.06,
+        "MLY": 8.03,
+        "PAK": 0.9,
+        "VTN": 1.8,
+        "SAF": 8.98,
+        "ITY": 5.27,
+        "GER": 8.89
+      }
+    ];
+
+
+        // X axis
+        x.domain(data.map(function(d) { return d.year; }))
+        xAxis.transition().duration(1000).call(d3.axisBottom(x)).selectAll('text').style('text-anchor', 'end')
+            .attr('transform', 'rotate(-65 -5 10)');
+
+        // Add Y axis
+        y.domain([0, d3.max(data, function(d) { return d[selectedVar] })*1.2 ]);
+        yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+        var tooltip = d3.select('#worldBars')
+              .append('div')
+              .attr('class', 'tooltip');
+              tooltip.append('div')
+              .attr('class', 'label');
+
+        // variable barGroups: map data to existing bars
+        var barGroups = svg.selectAll("rect")
+          .data(data)
+
+
+
+
+          // update bars
+        barGroups
+        .enter()
+          .append("rect")
+          .merge(barGroups)
+          .transition().duration(1000)
+            .attr("x", function(d) { return x(d.year);})
+            .attr("y", function(d) { return y(d[selectedVar]); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) {return height - y(d[selectedVar]); })
+            .attr("fill", "#80cbc4")
+
+        barGroups
+        .enter().selectAll("rect")
+        .on('mouseenter',function(d,i){
+            d3.select(this)
+              .attr('opacity', 0.6);
+
+              var heig = JSON.stringify(y.domain());
+              heig = parseFloat(heig.slice(3,heig.length-1))
+              var height_value = (heig * (height-parseFloat(d3.select(this).attr("y")))/height).toFixed(2);
+              //alert(height_value);
+
+            line = barGroups.enter()
+            .append('line')
+              .attr('id', 'limit')
+              .attr('x1', 0)
+              .attr('y1', d3.select(this).attr("y"))
+              .attr('x2', width)
+              .attr('y2', d3.select(this).attr("y"))
+
+            tooltip.select('.label')
+            .html(height_value);
+            tooltip.style('display', 'block')
+            .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY) + "px");
+
+            })
+        .on('mouseleave',function(){
+            d3.select(this)
+              .transition()
+              .duration(300)
+              .attr('opacity', 1);
+            barGroups.enter().selectAll('#limit').remove();
+            tooltip.style('display', 'none');
+              })
+
+
+
+        /*barGroups
+        .enter()
+          .append('text')
+          .attr('class', 'value')
+          .transition().duration(1000)
+          .attr("x", function(d) { return x(d.year); })
+          .attr("y", function(d) { return y(d[selectedVar]); })
+          //alert(y(d[selectedVar]))
+          .style('text-anchor', 'middle')
+          .text((d) => `${d[selectedVar]}`)*/
+
+
+        barGroups
+        .exit()
+        .remove()
+
+
+
+    }
+
+    // Initialize plot
+    getGraph()
+
+    </script>

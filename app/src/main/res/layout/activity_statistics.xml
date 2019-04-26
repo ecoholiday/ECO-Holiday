@@ -88,7 +88,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:id="@+id/chartFrame"></FrameLayout>
+            android:id="@+id/worldFrame"
+            android:visibility="invisible"></FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/ausFrame"
+            android:visibility="invisible"></FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/vicFrame"
+            android:visibility="invisible"></FrameLayout>
     </RelativeLayout>
 
 </RelativeLayout>
