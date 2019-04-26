@@ -50,7 +50,7 @@ public class DistanceActivity extends AppCompatActivity {
 
         setTitle("Distance");
 
-        sharedpreferences = getSharedPreferences(MainActivity.MyPREFERENCES, Context.MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(PlanHoliday.MyPREFERENCES, Context.MODE_PRIVATE);
 
         distanceCount = (TextView) findViewById(R.id.count);
         dayCount = (TextView) findViewById(R.id.day_count);
@@ -61,7 +61,7 @@ public class DistanceActivity extends AppCompatActivity {
 
         ParksList = new ArrayList<ParkItems>();
 
-        mDatabase = openOrCreateDatabase(MainActivity.DATABASE_NAME, MODE_PRIVATE, null);
+        mDatabase = openOrCreateDatabase(PlanHoliday.DATABASE_NAME, MODE_PRIVATE, null);
 
         new GetParksData().execute(); //adding to get the list upon opening the page - charithesh
 

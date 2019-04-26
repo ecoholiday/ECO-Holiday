@@ -14,14 +14,13 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:largeHeap="true"
         android:icon="@drawable/corpicon"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.Statistics"></activity>
+        <activity android:name=".Activity.Statistics" />
         <activity android:name=".Activity.Cycling" />
-        <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.PlanHoliday" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

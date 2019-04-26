@@ -82,7 +82,7 @@ public class MapsActivity extends AppCompatActivity implements GoogleApiClient.C
 
 
 
-        shared = getSharedPreferences(MainActivity.MyPREFERENCES, MODE_PRIVATE);
+        shared = getSharedPreferences(PlanHoliday.MyPREFERENCES, MODE_PRIVATE);
         originLatitude = shared.getString("Latitude", "");
         originLongitude = shared.getString("Longitude", "");
         destinationLatitude = shared.getString("ParkLatitude", "");
