@@ -39,12 +39,11 @@
     }
 
     div#container {
-      border: 2px solid white;
+      border: 2px solid black;
       border-radius: 25px;
       width: auto;
       height: 300px;
-      margin: auto;
-      background-color: #3d5f8c;
+      margin: 0 auto;
     }
 
     svg {
@@ -58,7 +57,7 @@
 
     text {
       font-size: 15px;
-      fill: #fff;
+      fill: #000;
     }
 
 
@@ -141,11 +140,11 @@
     var yAxis = svg.append("g")
       .attr("class", "myYaxis")
 
-    svg.append('text')
+    /* svg.append('text')
         .attr('class', 'label')
         .attr("x", width / 2 )
         .attr("y",  height + margin.bottom)
-        .text("year")
+        .text("year") */
 
     svg.append('text')
           .attr('class', 'title')
@@ -465,7 +464,7 @@
             .attr("y", function(d) { return y(d[selectedVar]); })
             .attr("width", x.bandwidth())
             .attr("height", function(d) {return height - y(d[selectedVar]); })
-            .attr("fill", "#80cbc4")
+            .attr("fill", "#197319")
 
         barGroups
         .enter().selectAll("rect")
@@ -475,7 +474,7 @@
 
               var heig = JSON.stringify(y.domain());
               heig = parseFloat(heig.slice(3,heig.length-1))
-              var height_value = (heig * (height-parseFloat(d3.select(this).attr("y")))/height).toFixed(2);
+              var height_value = (heig * (width-parseFloat(d3.select(this).attr("y")))/width).toFixed(2);
               //alert(height_value);
 
             line = barGroups.enter()

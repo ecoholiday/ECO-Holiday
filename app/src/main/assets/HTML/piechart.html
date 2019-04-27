@@ -3,22 +3,32 @@
 <style>
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   position: relative;
 }
     div#VicPie {
-      border: 2px solid white;
+      border: 2px solid black;
       border-radius: 25px;
       width: auto;
       height: 500px;
       margin: auto;
-      background-color: #3d5f8c;
     }
+text {
+  font-size: 15px;
+  fill: #000;
+}
+
+text.title {
+  font-size: 20px;
+  font-weight: 600;
+}
 
 
 svg {
 	width: 100%;
 	height: 100%;
+	display:block;
+	margin:auto;
 }
 
 path.slice{
@@ -39,9 +49,7 @@ button#btnReset {
     position: absolute;
     top: 50%;
 }
-h6{
-text-align: center;
-}
+
 
 </style>
 <body>
@@ -51,7 +59,9 @@ text-align: center;
 <div id="VicPie">
     <div class="wrapper">
         <button id="btnReset" onclick="resetClick()">reset</button>
+
     </div>
+    <svg></svg>
 </div>
 
 
@@ -66,9 +76,10 @@ function resetClick() {
 
 var parentWidth = document.getElementById("VicPie");
 
-var svg = d3.select("#VicPie")
-	.append("svg")
+var svg = d3.select("svg")
+	//.append("svg")
 	.append("g")
+
 
 svg.append("g")
 	.attr("class", "slices");
@@ -78,8 +89,14 @@ svg.append("g")
 	.attr("class", "lines");
 
 var width = parentWidth.clientWidth ,
-    height = parentWidth.clientHeight,
+    height = parentWidth.clientHeight*0.8 ,
 	radius = Math.min(width, height) / 2;
+
+svg.append('text')
+          .attr('class', 'title')
+          .attr('y', -height/2-9)
+          .attr('text-anchor', 'middle')
+          .text('Percapita emissions at sector level')
 
 var pie = d3.layout.pie()
 	.sort(null)
@@ -95,7 +112,7 @@ var outerArc = d3.svg.arc()
 	.innerRadius(radius * 0.9)
 	.outerRadius(radius * 0.9);
 
-svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+svg.attr("transform", "translate(" + width / 2 + "," + (height+50) / 2 + ")");
 
 var key = function(d){ return d.data.label; };
 
@@ -142,8 +159,8 @@ var elecData = [{"label":"Domestic","value" : 50.622},
 
 var color = d3.scale.ordinal()
 	.domain(["Lorem ipsum", "dolor sit"])
-	//.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-	.range(["#eeff00", "#ff0022", "#2200ff"]);
+	.range(["#bca136", "#7b6888", "#6b486b", "#f26d21", "#1496bb", "#c02f1d"]);
+	//.range(["#eeff00", "#ff0022", "#2200ff"]);
 
 change(vicData);
 
@@ -172,8 +189,6 @@ function change(data) {
 		})
 
 	vicPieChart.on('mouseenter',function(d,i){
-		d3.select(this)
-          .attr('opacity', 0.6);
 
 		  document.getElementById("btnReset").style.visibility = "visible";
 			changeDataOnMouse(d.data.label);
@@ -195,7 +210,7 @@ function change(data) {
 			//return (d.data.label + " \n("+d.data.value + ")");
 			return (d.data.label);
 		})
-		.style("fill", 'white')
+		//.style("fill", 'white')
 
 	function midAngle(d){
 		return d.startAngle + (d.endAngle - d.startAngle)/2;
@@ -209,11 +224,6 @@ function change(data) {
 			return function(t) {
 				var d2 = interpolate(t);
 				var pos = arc.centroid(d2);
-				console.log(pos);
-				console.log(d2);
-				//var pos1 = pos[1];
-				//pos[1] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
-				//pos[1] = pos[0];
 				if (pos[1] >0){
 				pos[1] = pos[1] + height/6 +10;
 				}

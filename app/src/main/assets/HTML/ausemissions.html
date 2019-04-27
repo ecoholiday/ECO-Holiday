@@ -22,12 +22,11 @@ div#layout {
 }
 
 div#container {
-  border: 2px solid red;
+  border: 2px solid black;
   border-radius: 25px;
   width: auto;
   height: 450px;
   margin: auto;
-  background-color: #3d5f8c;
 }
 
 svg {
@@ -36,12 +35,12 @@ svg {
 }
 
 .bar {
-  fill: #80cbc4;
+  fill: #ad2a1a;
 }
 
 text {
   font-size: 15px;
-  fill: #fff;
+  fill: #000;
 }
 
 
@@ -50,14 +49,14 @@ line {
 }
 
 line#limit {
-  stroke: #FED966;
+  stroke: #107896;
   stroke-width: 3;
   stroke-dasharray: 3 6;
 }
 
 text.diff {
   font-size: 10px;
-  fill: #2F4A6D;
+  fill: #000000;
 }
 
 text.value {
@@ -221,7 +220,7 @@ text.label {
       .attr('x', (width / 2))
       .attr('y', height+margin*2)
       .attr('text-anchor', 'right')
-      .text('metric tonnes')
+      .text('million tonnes')
 
     svg.append('text')
       .attr('class', 'title')
