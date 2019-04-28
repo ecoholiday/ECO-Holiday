@@ -127,23 +127,6 @@ public class PlanHoliday extends AppCompatActivity {
             }
         });
 
-
-        /* final ImageView imgNationalPark = (ImageView)findViewById(R.id.imgNationalPark);
-        imgNationalPark.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        imgNationalPark.setBackgroundColor(Color.parseColor("#ffffff"));
-                    }
-                }, 500);
-                imgNationalPark.setBackgroundColor(Color.parseColor("#25368A"));
-                Intent intentNP = new Intent(PlanHoliday.this, MainActivity.class);
-                startActivity(intentNP);
-            }
-        }); */
-
         final ImageView imgStats = (ImageView)findViewById(R.id.imgStats);
         imgStats.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -381,7 +364,7 @@ public class PlanHoliday extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             if(z=="SUCCESS"){
-                //Toast.makeText(getApplicationContext(),"Data Loading Completed.",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Data Loading Completed.",Toast.LENGTH_LONG).show();
             }else{
                 Toast.makeText(getApplicationContext(),"Data Loading Fail. Please try again",Toast.LENGTH_LONG).show();
             }

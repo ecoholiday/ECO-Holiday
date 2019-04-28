@@ -13,19 +13,92 @@
         <item>Chiltern-Mt Pilot National Park</item>
         <item>Churchill National Park</item>
         <item>Cobboboonee National Park</item>
+        <item>Coopracambra National Park</item>
+        <item>Croajingolong National Park</item>
+        <item>Dandenong Ranges National Park</item>
+        <item>Errinundra National Park</item>
+        <item>French Island National Park</item>
+        <item>Grampians National Park</item>
+        <item>Great Otway National Park</item>
+        <item>Greater Bendigo National Park</item>
+        <item>Gunbower National Park</item>
+        <item>Hattah - Kulkyne National Park</item>
+        <item>Heathcote-Graytown National Park</item>
+        <item>Kara Kara National Park</item>
+        <item>Kinglake National Park</item>
+        <item>Lake Eildon National Park</item>
+        <item>Lind National Park</item>
+        <item>Little Desert National Park</item>
+        <item>Lower Glenelg National Park</item>
+        <item>Lower Goulburn National Park</item>
+        <item>Mitchell River National Park</item>
+        <item>Mornington Peninsula National Park</item>
+        <item>Morwell National Park</item>
+        <item>Mount Buffalo National Park</item>
+        <item>Mount Eccles National Park</item>
+        <item>Mount Richmond National Park</item>
+        <item>Murray - Sunset National Park</item>
+        <item>Organ Pipes National Park</item>
+        <item>Point Nepean National Park</item>
+        <item>Port Campbell National Park</item>
+        <item>Snowy River National Park</item>
+        <item>Tarra-Bulga National Park</item>
+        <item>Terrick Terrick National Park</item>
+        <item>The Lakes National Park</item>
+        <item>Warby-Ovens National Park</item>
+        <item>Wilsons Promontory National Park</item>
+        <item>Wyperfeld National Park</item>
+        <item>Yarra Ranges National Park</item>
 
     </string-array>
 
     <string-array name="Area">
-        <item>3022</item>
-        <item>662305</item>
-        <item>28437</item>
-        <item>12778</item>
-        <item>8880</item>
-        <item>18964</item>
-        <item>21666</item>
+        <item>3,022</item>
+        <item>6,62,305</item>
+        <item>28,437</item>
+        <item>12,778</item>
+        <item>8,880</item>
+        <item>18,964</item>
+        <item>21,666</item>
         <item>272</item>
-        <item>18525</item>
+        <item>18,525</item>
+        <item>38,502</item>
+        <item>88,481</item>
+        <item>3,536</item>
+        <item>40,101</item>
+        <item>10,323</item>
+        <item>1,68,288</item>
+        <item>1,03,985</item>
+        <item>17,325</item>
+        <item>9,236</item>
+        <item>49,974</item>
+        <item>12,693</item>
+        <item>13,981</item>
+        <item>23,212</item>
+        <item>27,861</item>
+        <item>1,360</item>
+        <item>1,31,600</item>
+        <item>26,448</item>
+        <item>9,307</item>
+        <item>14,389</item>
+        <item>2,685</item>
+        <item>565</item>
+        <item>27,479</item>
+        <item>8,571</item>
+        <item>1,738</item>
+        <item>6,65,541</item>
+        <item>153</item>
+        <item>542</item>
+        <item>2,404</item>
+        <item>1,14,706</item>
+        <item>2,017</item>
+        <item>6,388</item>
+        <item>2,405</item>
+        <item>14,708</item>
+        <item>48,202</item>
+        <item>3,59,855</item>
+        <item>77,229</item>
+
 
     </string-array>
 
@@ -39,6 +112,42 @@
         <item>-36.2488</item>
         <item>-37.9501</item>
         <item>-38.1144</item>
+        <item>-37.3422</item>
+        <item>-37.6500</item>
+        <item>-37.8779</item>
+        <item>-37.3447</item>
+        <item>-38.3356</item>
+        <item>-37.2542</item>
+        <item>-38.5977</item>
+        <item>-36.5212</item>
+        <item>-35.8012</item>
+        <item>-34.6800</item>
+        <item>-36.7816</item>
+        <item>-36.8672</item>
+        <item>-37.4136</item>
+        <item>-37.3063</item>
+        <item>-37.5798</item>
+        <item>-36.5572</item>
+        <item>-38.0295</item>
+        <item>-36.2569</item>
+        <item>-37.6400</item>
+        <item>-38.4446</item>
+        <item>-38.3655</item>
+        <item>-36.7119</item>
+        <item>-38.0820</item>
+        <item>-38.2661</item>
+        <item>-34.6845</item>
+        <item>-37.6675</item>
+        <item>-38.3155</item>
+        <item>-38.6466</item>
+        <item>-37.2710</item>
+        <item>-38.4366</item>
+        <item>-36.1338</item>
+        <item>-37.9876</item>
+        <item>-36.2763</item>
+        <item>-38.9599</item>
+        <item>-35.5849</item>
+        <item>-37.6970</item>
 
     </string-array>
 
@@ -52,6 +161,42 @@
         <item>146.6830</item>
         <item>145.2604</item>
         <item>141.4400</item>
+        <item>149.3269</item>
+        <item>149.4833</item>
+        <item>145.3145</item>
+        <item>148.8416</item>
+        <item>145.3837</item>
+        <item>142.4098</item>
+        <item>143.8603</item>
+        <item>144.4419</item>
+        <item>144.2842</item>
+        <item>142.3707</item>
+        <item>144.9754</item>
+        <item>143.2628</item>
+        <item>145.2002</item>
+        <item>145.9865</item>
+        <item>148.9614</item>
+        <item>141.4914</item>
+        <item>141.1288</item>
+        <item>145.3061</item>
+        <item>147.3534</item>
+        <item>144.8584</item>
+        <item>146.3904</item>
+        <item>146.7747</item>
+        <item>141.8848</item>
+        <item>141.4158</item>
+        <item>141.4794</item>
+        <item>144.7684</item>
+        <item>144.6835</item>
+        <item>143.0748</item>
+        <item>148.4527</item>
+        <item>146.5885</item>
+        <item>144.2452</item>
+        <item>147.6670</item>
+        <item>146.1856</item>
+        <item>146.3671</item>
+        <item>141.7584</item>
+        <item>146.0037</item>
 
     </string-array>
 
@@ -65,7 +210,348 @@
         <item>266</item>
         <item>272</item>
         <item>125</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
 
     </string-array>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Camping">
+        <item>Dogmans Hut (Tom Groggin)</item>
+        <item>Johnston Hut</item>
+        <item>Kelly Hut (Holmes Plain)</item>
+        <item>Tawonga Huts</item>
+        <item>Weston Hut</item>
+        <item>Young Hut</item>
+        <item>Rogers Hut</item>
+        <item>Bluff Hut</item>
+        <item>Ritchies Hut</item>
+        <item>Davies Plain Hut</item>
+        <item>Kennedy Hut</item>
+        <item>Rover Scout Chalet</item>
+        <item>Cairn Creek Hut</item>
+        <item>Edmondson Hut</item>
+        <item>Wallace Hut</item>
+        <item>Country Roads Board Hut</item>
+        <item>Maddisons Huts</item>
+        <item>Campbells Yards Huts - Feed Store Nth</item>
+        <item>Tawonga Huts - Feed Store - Hut closest to falls creek</item>
+        <item>Campbells Yards Huts - Quarters</item>
+        <item>Bindaree Hut</item>
+        <item>Gattamurh Creek Hut</item>
+        <item>Gardners Hut</item>
+        <item>Lankey Plain Hut</item>
+        <item>Top Crossing Hut</item>
+        <item>Lazy H Hut</item>
+        <item>King River Hut</item>
+        <item>Howitt Plains Hut</item>
+        <item>Guys Hut and Yards</item>
+        <item>Lake Cobbler Hut</item>
+        <item>Moroka Hut</item>
+        <item>Vallejo Gantner Hut</item>
+        <item>Campbell Yard Hut</item>
+        <item>Cope Hut</item>
+        <item>Cope Saddle Hut</item>
+        <item>Faithfulls Hut</item>
+        <item>Langford Gap Hut</item>
+        <item>McNamara Hut</item>
+        <item>Tawonga Hut Complex</item>
+        <item>McNamara Hut</item>
+        <item>Miller Hut</item>
+        <item>Blairs Hut</item>
+        <item>J.B. Plain Hut</item>
+        <item>Melbourne Uni Mountaineering Club Hut</item>
+        <item>Davies Plain Hut</item>
+        <item>Biplane Hut</item>
+        <item>Wonnangatta Hut - Refuge Only</item>
+        <item>Quart Pot Flat Hut</item>
+        <item>Wombat Post Office Hut</item>
+        <item>Dibbins Hut</item>
+        <item>Fitzgeralds Hut</item>
+        <item>Michell Hut</item>
+        <item>Pretty Valley Hut</item>
+        <item>Federation Hut</item>
+        <item>Bogong Jack Saddle Hut</item>
+        <item>Kellys Hut at Alpine NP</item>
+        <item>Pikes Flat Hut - Refuge</item>
+        <item>EMS - Rover Chalet</item>
+        <item>Mc.Michael Hut</item>
+        <item>Mt Benambra (Towermans Hut)</item>
+        <item>Lankey Plain Hut (Refuge only)</item>
+        <item>Bivouac Hut</item>
+        <item>Ropers Hut at Camping Area</item>
+        <item>Huts - Aberfeldy River</item>
+        <item>N B W Hut</item>
+        <item>J.W. McMahon Rover Hut or Rover Hut</item>
+        <item>Heatherlie (Mt Difficult) Quarry - Cottage (East)</item>
+        <item>Heatherlie (Mt Difficult) Quarry - Cottage (West)</item>
+        <item>Heatherlie (Mt Difficult) Quarry - Cottage (Central)</item>
+        <item>Teddington Hut</item>
+        <item>Shelter</item>
+        <item>Battersbys Walkers Shelter</item>
+        <item>Pattersons Walkers Camp Shelter</item>
+        <item>Lower Glenelg National Park</item>
+        <item>Mopoke Hut</item>
+        <item>Refuge Cove Rangers hut</item>
+        <item>Sealers Cove Rangers Hut</item>
+        <item>Halfway Hut</item>
+        <item>Wonga Hut</item>
+
+
+    </string-array>
+
+    <string-array name="CNPID">
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>21</item>
+        <item>25</item>
+        <item>26</item>
+        <item>26</item>
+        <item>26</item>
+        <item>34</item>
+        <item>43</item>
+        <item>43</item>
+        <item>43</item>
+        <item>44</item>
+
+
+    </string-array>
+
+    <string-array name="TrackName">
+        <item>Australian Alps Walking Track</item>
+        <item>Bicentennial National Trail</item>
+        <item>Bryce Gorge Trail</item>
+        <item>Howqua River the Bluff Trail</item>
+        <item>Mt Bogong Trail</item>
+        <item>Mt Feathertop via Razorback Trail</item>
+        <item>Mt Hotham Dinner Plain Ski Trail</item>
+        <item>Tali Karng Trail</item>
+        <item>Wallaces Hut to Cope Hut Trail</item>
+        <item>Barmah Lakes Loop Track</item>
+        <item>Mount St Gwinear Trail</item>
+        <item>Bluff Falls Nature Walk</item>
+        <item>White Box Walking Trail</item>
+        <item>Genoa Peak Trail</item>
+        <item>Thurra River Walks</item>
+        <item>Wilderness Coast Walk</item>
+        <item>Kokoda Walk - Dandenong Ranges National Park</item>
+        <item>Sherbrooke Falls Trail - Dandenong Ranges National Park</item>
+        <item>Errinundra Saddle Rainforest Walk</item>
+        <item>Beehive Falls Trail</item>
+        <item>Beeripmo Walk - Beaufort</item>
+        <item>Eureka Trail</item>
+        <item>Great Dividing Trail</item>
+        <item>Lake Wendouree Trail</item>
+        <item>MacKenzie Falls Trail</item>
+        <item>Mt Abrupt (Mt Murdadjoog) Trail</item>
+        <item>Mt Rosea Trail</item>
+        <item>Mt William (Mt Duwil) Trail</item>
+        <item>Mt Wudjub-Guyan (Hollow Mountain) Trail</item>
+        <item>Red Gum Walk</item>
+        <item>Wonderland Loop Walk</item>
+        <item>Bugle Ridge Track</item>
+        <item>Camel Pad Track</item>
+        <item>Mason Falls - Mt Sugarloaf - Kinglake National Park</item>
+        <item>Lake Eildon Walks</item>
+        <item>Desert Discovery Walk</item>
+        <item>Pritchards to Post and Rail Trail</item>
+        <item>Den of Nargun Walk</item>
+        <item>Bushrangers Bay Trail</item>
+        <item>Point Nepean Trail</item>
+        <item>Crater Rim Nature Walk</item>
+        <item>Benwerrin Nature Walk</item>
+        <item>Gorge Heritage Walk</item>
+        <item>The Horn Trail</item>
+        <item>Cape Bridgewater Seal Walk</item>
+        <item>Pink Lakes Trail</item>
+        <item>Cape Otway to Rainbow Falls Trail</item>
+        <item>Maits Rest Rainforest Trail</item>
+        <item>Triplet Falls Heritage Trail</item>
+        <item>Wreck Beach Trail</item>
+        <item>Loch Ard Gorge Short Walks</item>
+        <item>Port Campbell Discovery Walk</item>
+        <item>Fern Gully Nature Walk</item>
+        <item>Lilly Pilly Gully Nature Walk</item>
+        <item>Millers Landing-Vereker Outlook Trail</item>
+        <item>Prom Lighthouse Trek</item>
+        <item>Tidal River to Squeaky Beach Trail</item>
+        <item>Tongue Point Trail</item>
+        <item>Wilsons Prom Circuit Trail</item>
+        <item>Tyakil Nature Walk</item>
+        <item>Cumberland Walk - Marysville</item>
+        <item>Lake Mountain Summit Walk - Yarra Ranges National Park</item>
+        <item>Steavenson Falls Walk - Marysville</item>
+        <item>The Beeches trail - Yarra Ranges National Park</item>
+
+    </string-array>
+
+    <string-array name="TNPID">
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>6</item>
+        <item>11</item>
+        <item>11</item>
+        <item>11</item>
+        <item>12</item>
+        <item>12</item>
+        <item>13</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>19</item>
+        <item>19</item>
+        <item>22</item>
+        <item>23</item>
+        <item>25</item>
+        <item>26</item>
+        <item>28</item>
+        <item>29</item>
+        <item>29</item>
+        <item>32</item>
+        <item>33</item>
+        <item>33</item>
+        <item>33</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>35</item>
+        <item>35</item>
+        <item>35</item>
+        <item>37</item>
+        <item>37</item>
+        <item>39</item>
+        <item>43</item>
+        <item>43</item>
+        <item>43</item>
+        <item>43</item>
+        <item>43</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>45</item>
+        <item>45</item>
+        <item>45</item>
+
+    </string-array>
+
+
 </resources>

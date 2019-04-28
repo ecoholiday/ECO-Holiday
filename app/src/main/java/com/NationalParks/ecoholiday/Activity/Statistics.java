@@ -1,5 +1,6 @@
 package com.NationalParks.ecoholiday.Activity;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 
 import com.NationalParks.ecoholiday.R;
 
@@ -23,6 +25,42 @@ public class Statistics extends AppCompatActivity {
         worldFrame = (FrameLayout) findViewById(R.id.worldFrame);
         ausFrame = (FrameLayout) findViewById(R.id.ausFrame);
         vicFrame = (FrameLayout) findViewById(R.id.vicFrame);
+
+        ImageButton imgStats = (ImageButton) findViewById(R.id.imgStats);
+        imgStats.setImageResource(R.mipmap.stats_clicked);
+
+
+        final ImageButton imgExplore = (ImageButton) findViewById(R.id.imgExplore);
+        imgExplore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentExplore = new Intent(Statistics.this, Home.class);
+                startActivity(intentExplore);
+
+            }
+        });
+
+        final ImageButton imgHelp = (ImageButton) findViewById(R.id.imgHelp);
+        imgHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent imgHelp = new Intent(Statistics.this, Help.class);
+                startActivity(imgHelp);
+
+            }
+        });
+
+        final ImageButton imgChecklist = (ImageButton) findViewById(R.id.imgChecklist);
+        imgHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent imgChecklist = new Intent(Statistics.this, CheckList.class);
+                startActivity(imgChecklist);
+
+            }
+        });
+
+
 
 
         FragmentManager manager = getSupportFragmentManager();

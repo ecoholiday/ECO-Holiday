@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/imageBackground">
+
+    <TextView
+        android:id="@+id/txtDistanceFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Distance" />
+
+    <RelativeLayout
+        android:id="@+id/relMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDistanceFilter"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/txtMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max:" />
+
+        <EditText
+            android:id="@+id/txtMaxEnter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txtMax"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:typeface="sans"
+            tools:text="1000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relMax"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/txtMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min:" />
+
+        <EditText
+            android:id="@+id/txtMinEnter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txtMin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="0"
+            android:typeface="sans"
+            tools:text="0" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relMin">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/btnFilterApply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="apply" />
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+</RelativeLayout>

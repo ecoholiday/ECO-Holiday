@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".Activity.Statistics">
 
+    <include layout="@layout/toolbar"></include>
+
     <LinearLayout
         android:id="@+id/relCharts"
         android:orientation="horizontal"

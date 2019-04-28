@@ -57,7 +57,7 @@ public class LandingPage extends AppCompatActivity {
                         }
                     });
 
-                    Intent intent = new Intent(getApplicationContext(),PlanHoliday.class);
+                    Intent intent = new Intent(getApplicationContext(),Home.class);
                     startActivity(intent);
                     finish();
                 } catch (InterruptedException e) {

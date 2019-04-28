@@ -16,4 +16,6 @@
     <color name="second_black">#747474</color>
     <color name="third_black">#9D9D9D</color>
     <color name="fourth_black">#E2E2E2</color>
+    <color name="imageBackgroundClicked">#26A69A</color>
+    <color name="imageBackground">#d0e8e3</color>
 </resources>

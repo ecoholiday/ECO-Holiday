@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
@@ -45,8 +46,43 @@ public class DistanceActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_distance);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        // Toolbar changes
+
+        ImageButton imgExplore = (ImageButton) findViewById(R.id.imgExplore);
+        imgExplore.setImageResource(R.mipmap.explore_clicked);
+
+        final ImageButton imgStats = (ImageButton) findViewById(R.id.imgStats);
+        imgStats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentExplore = new Intent(DistanceActivity.this, Statistics.class);
+                startActivity(intentExplore);
+
+            }
+        });
+
+        final ImageButton imgHelp = (ImageButton) findViewById(R.id.imgHelp);
+        imgHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent imgHelp = new Intent(DistanceActivity.this, Help.class);
+                startActivity(imgHelp);
+
+            }
+        });
+
+        final ImageButton imgChecklist = (ImageButton) findViewById(R.id.imgChecklist);
+        imgChecklist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent imgChecklist = new Intent(DistanceActivity.this, CheckList.class);
+                startActivity(imgChecklist);
+
+            }
+        });
+
+        // Toolbar changes
 
         setTitle("Distance");
 
@@ -92,21 +128,16 @@ public class DistanceActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 dayCount.setText(progress+"");
                 DaysCount = progress;
-
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 //new GetParksData().execute();
-
             }
-
         });
+
 
         imgSearch.setOnClickListener(new View.OnClickListener() {
             @Override
