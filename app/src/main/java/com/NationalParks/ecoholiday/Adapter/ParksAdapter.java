@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import com.NationalParks.ecoholiday.Activity.DistanceActivity;
 import com.NationalParks.ecoholiday.Activity.Home;
 import com.NationalParks.ecoholiday.Activity.Home;
+import com.NationalParks.ecoholiday.Activity.LandingPage;
 import com.NationalParks.ecoholiday.Activity.MapsActivity;
 import com.NationalParks.ecoholiday.Activity.ParkActivity;
 import com.NationalParks.ecoholiday.Activity.PlanNationalParkActivity;
@@ -102,13 +104,6 @@ public class ParksAdapter extends BaseAdapter {
                 context.startActivity(new Intent(context, ParkActivity.class));
             }
         });
-
-
-//        if(item.getParkImage() != null){
-//            byte[] decodedString = Base64.decode(item.getAssetImage(), Base64.DEFAULT);
-//            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-//            park_Image.setImageBitmap(decodedByte);
-//        }
 
         return convertView;
     }

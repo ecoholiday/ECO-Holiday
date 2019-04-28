@@ -1,6 +1,7 @@
 package com.NationalParks.ecoholiday.Activity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,14 +24,9 @@ public class LandingPage extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        /*Button btnGetStarted = (Button)findViewById(R.id.btnGetStarted);
-        btnGetStarted.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LandingPage.this,PlanHoliday.class);
-                startActivity(intent);
-            }
-        });*/
+        /*SQLiteDatabase db = this.getWritableDatabase(); //get database
+        db.execSQL("DELETE FROM tablename"); //delete all rows in a table
+        db.close();*/
 
         Thread mythead = new Thread(){
             @Override

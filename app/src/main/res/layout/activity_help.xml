@@ -1,15 +1,1747 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.Help">
     <include layout="@layout/toolbar"></include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Barmah National Park"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#da1616"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:typeface="sans"
+                    android:textSize="15sp"
+                    android:text="call - (03) 8627 4700"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Baw Baw National Park"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#da1616"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:typeface="sans"
+                    android:textSize="15sp"
+                    android:text="call - 13 1963"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Brisbane Ranges National Park"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#da1616"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:typeface="sans"
+                    android:textSize="15sp"
+                    android:text="call - 13 1963 / 1800 226 226"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Burrowa - Pine Mountain National Park"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#da1616"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:typeface="sans"
+                    android:textSize="15sp"
+                    android:text="call - 13 1963"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Chiltern-Mt Pilot National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / 1300 366321/ (03) 5726 1611 / 1800 801065"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Help"/>
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Churchill National Park"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#da1616"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:typeface="sans"
+                    android:textSize="15sp"
+                    android:text="call - 13 1963"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Cobboboonee National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / (03) 5523 2671 / (08) 8738 4051"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Coopracambra National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Croajingolong National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 19 63"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Dandenong Ranges National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 19 63"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Errinundra National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 19 63 / (03) 5161 1222 / (02) 6459 0500 / 03) 5154 2424"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="French Island National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Grampians National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - (03) 5361 4000 / "
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Great Otway National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Greater Bendigo National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / 1800 813 153"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Gunbower National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Hattah - Kulkyne National Parkk"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Heathcote-Graytown National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Kara Kara National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Kinglake National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Lake Eildon National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - (03) 5774 2585"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Lind National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Little Desert National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Lower Glenelg National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Lower Goulburn National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Mitchell River National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Mornington Peninsula National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Morwell National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Mount Buffalo National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                app:fontFamily="sans-serif-condensed"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="#040404"
+                android:text="Mount Eccles National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Mount Richmond National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Murray - Sunset National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / (03) 5480 7110"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Organ Pipes National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / (0) 3-9016-7590"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Point Nepean National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Port Campbell National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / 1800 505 466"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Snowy River National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Tarra-Bulga National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / (03) 8427 2001"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Terrick Terrick National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / (03) 8427 2001"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="The Lakes National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / (03) 8427 2001"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Wilsons Promontory National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - (03) 8427 2694"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Wyperfeld National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / (03) 8427 2001"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:typeface="sans"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    app:fontFamily="sans-serif-condensed"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#040404"
+                    android:text="Yarra Ranges National Park"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#da1616"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:text="call - 13 1963 / (03) 8427 2001"
+                android:textStyle="bold"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

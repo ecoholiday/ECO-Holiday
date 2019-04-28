@@ -24,9 +24,9 @@
         android:layout_weight="1"
         android:padding="10dp"
         android:textSize="16dp"
-        android:drawableRight="@drawable/places_ic_search"
+        android:focusable="false"
+        android:drawableLeft="@drawable/places_ic_search"
         android:background="@drawable/table_shape"
-        android:inputType="textCapCharacters"
         android:hint="Enter National Park Name">
     </AutoCompleteTextView>
 
@@ -49,9 +49,6 @@
         android:layout_marginBottom="60dp">
     </ListView>
     </RelativeLayout>
-
-
-
 
 
 </RelativeLayout>

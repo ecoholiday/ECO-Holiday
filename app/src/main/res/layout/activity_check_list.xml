@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,17 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginBottom="60dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="91dp"
         tools:ignore="MissingConstraints">
         <TextView
             android:id="@+id/packingList"
             android:layout_width="match_parent"
+
+            app:fontFamily="sans-serif-condensed"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:text="Packing List"
-            android:textAllCaps="true"
-            android:textColor="#fafdfd"
+            android:background="@color/imageBackground"
+            android:textColor="#FFAE76"
             android:textSize="40dp" />
         <ScrollView
             android:layout_width="match_parent"

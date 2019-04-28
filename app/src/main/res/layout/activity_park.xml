@@ -67,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
                 android:layout_alignParentRight="true"
                 android:background="@color/imageBackground"
                 app:srcCompat="@mipmap/navigation" />
@@ -80,20 +81,57 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linCampTrek"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/linDates"
         android:layout_below="@+id/linCardview">
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/txtStart"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:focusable="false"
+            android:hint="start date"
+            android:inputType="date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/dob_et1"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:focusable="false"
+            android:hint="end date"
+            android:inputType="date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/linCampTrek"
+        android:layout_below="@+id/linDates">
+
+
+
         <CheckBox
             android:id="@+id/chkCamp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="true"
+            android:buttonTint="#FFAE76"
             android:text="Camping" />
         <CheckBox
             android:id="@+id/chkTrek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:buttonTint="#FFAE76"
             android:checked="true"
             android:text="Trekking" />
 
@@ -111,6 +149,24 @@
             android:layout_marginBottom="60dp">
         </ListView>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <Button
+            android:id="@+id/btnReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/get_staretd_button"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            app:fontFamily="serif"
+            android:textStyle="bold|italic"
+            android:text="know your emissions and money saved"/>
     </LinearLayout>
 
 

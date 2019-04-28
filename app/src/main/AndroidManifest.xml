@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ParkActivity"></activity>
+        <activity android:name=".Activity.report"></activity>
+        <activity android:name=".Activity.ParkActivity" />
         <activity android:name=".Activity.CheckList" />
         <activity android:name=".Activity.Help" />
         <activity android:name=".Activity.Home" />
