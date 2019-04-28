@@ -47,6 +47,7 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
 
     //calendar
 
+    Boolean firstTimeLoading = true;
     SharedPreferences sharedpreferences;
     int NPID;
     String parkName;
@@ -137,41 +138,6 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
 
         new GetParksFacilityData().execute();
 
-        /*chkCamp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(ParkCampingFacilityList.size()>0) {
-                    final Dialog dialog1 = new Dialog(ParkActivity.this);
-                    dialog1.setContentView(R.layout.custom_dailog);
-                    dialog1.setTitle(parkName);
-                    CampingData = (ListView) dialog1.findViewById(R.id.List);
-                    parkFacilityAdapter = new ParkFacilityAdapter(ParkActivity.this, ParkCampingFacilityList);
-                    CampingData.setAdapter(parkFacilityAdapter);
-                    dialog1.show();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Camping Data Not Available to this Park",Toast.LENGTH_LONG).show();
-                }
-            }
-        }); */
-
-        /* chkTrek.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(ParkTrekkingFacilityList.size()>0) {
-                    final Dialog dialog = new Dialog(ParkActivity.this);
-                    dialog.setContentView(R.layout.custom_dailog);
-                    dialog.setTitle(parkName);
-                    TrekkingData = (ListView) dialog.findViewById(R.id.List);
-                    parkFacilityAdapter = new ParkFacilityAdapter(ParkActivity.this, ParkTrekkingFacilityList);
-                    TrekkingData.setAdapter(parkFacilityAdapter);
-                    dialog.show();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Trekking Data Not Available to this Park",Toast.LENGTH_LONG).show();
-                }
-            }
-        }); */
-
-
         btnReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,18 +156,23 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
                 ParkActivityList.clear();
                 ParkActivityList = ParkCampingFacilityList;
                 ParkActivityList.addAll( ParkTrekkingFacilityList );
+                Toast.makeText(getApplicationContext(), ""+ ParkActivityList.size()+ "", Toast.LENGTH_LONG).show();
+                onCheckChanged();
 
             } else {
 
                 ParkActivityList.clear();
                 ParkActivityList = ParkCampingFacilityList;
-                Toast.makeText(getApplicationContext(), "Camp checked", Toast.LENGTH_LONG).show();
+                onCheckChanged();
+                //Toast.makeText(getApplicationContext(), "Camp checked", Toast.LENGTH_LONG).show();
             }
         }
-        else if (chkTrek.isChecked()& !(chkCamp.isChecked())) {
+        else if (chkTrek.isChecked()) {
 
             ParkActivityList.clear();
             ParkActivityList = ParkTrekkingFacilityList;
+            onCheckChanged();
+
         }
         else {
             Toast.makeText(getApplicationContext(), "Please select at least one activity", Toast.LENGTH_LONG).show();
@@ -228,46 +199,48 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
         protected String doInBackground(String... params) {
 
             String z = "SUCCESS";
+            if (firstTimeLoading) {
+                firstTimeLoading = false;
+                try {
 
-            try{
+                    String query1 = "select * from tbl_Camping where NPID =" + NPID + " order by CampingDescription ASC";
+                    Cursor cursorCamping = mDatabase.rawQuery(query1, null);
 
-                String query1 = "select * from tbl_Camping where NPID ="+NPID+" order by CampingDescription ASC";
-                Cursor cursorCamping = mDatabase.rawQuery(query1, null);
+                    if (cursorCamping.moveToFirst()) {
+                        do {
+                            final ParkFacilityListItem campItem = new ParkFacilityListItem();
+                            campItem.setParkFacilityName(cursorCamping.getString(cursorCamping.getColumnIndex("CampingDescription")));
+                            campItem.setParkFacilityID(cursorCamping.getInt(cursorCamping.getColumnIndex("CampID")));
+                            ParkCampingFacilityList.add(campItem);
+                        } while (cursorCamping.moveToNext());
+                    }
 
-                if(cursorCamping.moveToFirst()){
-                    do{
-                        final ParkFacilityListItem campItem = new ParkFacilityListItem();
-                        campItem.setParkFacilityName(cursorCamping.getString(cursorCamping.getColumnIndex("CampingDescription")));
-                        campItem.setParkFacilityID(cursorCamping.getInt(cursorCamping.getColumnIndex("CampID")));
-                        ParkCampingFacilityList.add(campItem);
-                    }while (cursorCamping.moveToNext());
+                    cursorCamping.close();
+                } catch (Exception e) {
+                    z = "FAIL";
                 }
+                try {
 
-                cursorCamping.close();
-            }catch (Exception e){
-                z="FAIL";
-            }
-            try{
+                    String query = "select * from tbl_Treck_Trail where NPID =" + NPID + " order by TrackName ASC";
+                    Cursor cursorTrekking = mDatabase.rawQuery(query, null);
 
-                String query = "select * from tbl_Treck_Trail where NPID ="+NPID+" order by TrackName ASC";
-                Cursor cursorTrekking = mDatabase.rawQuery(query, null);
-
-                if(cursorTrekking.moveToFirst()){
-                    do{
+                    if (cursorTrekking.moveToFirst()) {
+                        do {
 //                        trekking.add(cursorTrekking.getString(cursorTrekking.getColumnIndex("TrackName")));
-                        final ParkFacilityListItem trekItem = new ParkFacilityListItem();
-                        trekItem.setParkFacilityName(cursorTrekking.getString(cursorTrekking.getColumnIndex("TrackName")));
-                        trekItem.setParkFacilityID(cursorTrekking.getInt(cursorTrekking.getColumnIndex("TID")));
-                        ParkTrekkingFacilityList.add(trekItem);
-                    }while (cursorTrekking.moveToNext());
+                            final ParkFacilityListItem trekItem = new ParkFacilityListItem();
+                            trekItem.setParkFacilityName(cursorTrekking.getString(cursorTrekking.getColumnIndex("TrackName")));
+                            trekItem.setParkFacilityID(cursorTrekking.getInt(cursorTrekking.getColumnIndex("TID")));
+                            ParkTrekkingFacilityList.add(trekItem);
+                        } while (cursorTrekking.moveToNext());
+                    }
+                    cursorTrekking.close();
+                } catch (Exception e) {
+                    z = "FAIL";
                 }
-                cursorTrekking.close();
-            }catch (Exception e){
-                z="FAIL";
             }
 
-            //ParkActivityList = ParkCampingFacilityList;
-            //ParkActivityList.addAll( ParkTrekkingFacilityList );
+            ParkActivityList = ParkCampingFacilityList;
+            ParkActivityList.addAll( ParkTrekkingFacilityList );
             return z;
 
         }
@@ -279,9 +252,9 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
 
             if(result.equals("SUCCESS")){
 
-                if(ParkCampingFacilityList.size()>0){
+                if(ParkActivityList.size()>0){
                     lstActivity.setVisibility(View.VISIBLE);
-                    ParkFacilityAdapter parkListAdapter = new ParkFacilityAdapter(ParkActivity.this,ParkCampingFacilityList);
+                    ParkFacilityAdapter parkListAdapter = new ParkFacilityAdapter(ParkActivity.this,ParkActivityList);
                     lstActivity.setAdapter(parkListAdapter);
                     lstActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -299,6 +272,25 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
             }else{
                 Toast.makeText(getApplicationContext(),"Loading Problem",Toast.LENGTH_LONG).show();
             }
+        }
+    }
+
+    public void onCheckChanged(){
+
+        if(ParkActivityList.size()>0){
+            lstActivity.setVisibility(View.VISIBLE);
+            ParkFacilityAdapter parkListAdapter = new ParkFacilityAdapter(ParkActivity.this,ParkActivityList);
+            lstActivity.setAdapter(parkListAdapter);
+            lstActivity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Toast.makeText(getApplicationContext(),"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
+        }else{
+            lstActivity.setAdapter(null);
+            lstActivity.setVisibility(View.GONE);
+            Toast.makeText(getApplicationContext(),"Camping Data Not Available to this "+parkName,Toast.LENGTH_LONG).show();
         }
     }
 

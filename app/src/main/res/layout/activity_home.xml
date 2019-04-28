@@ -20,7 +20,7 @@
     <AutoCompleteTextView
         android:id="@+id/txtHomeSearch"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:layout_weight="1"
         android:padding="10dp"
         android:textSize="16dp"
@@ -33,7 +33,7 @@
     <ImageButton
         android:id="@+id/imgfilter"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:background="#ffffff"
         app:srcCompat="@mipmap/filter" />

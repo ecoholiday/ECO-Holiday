@@ -79,6 +79,7 @@ public class Home extends AppCompatActivity {
     ArrayAdapter NPAdapter;
     String selectNPName;
     List<Integer> NPIDonSearch = new ArrayList<Integer>();
+    List<String> NPSearch = new ArrayList<String>();
 
     //
     //SQLiteDatabase mDatabase;
@@ -321,7 +322,8 @@ public class Home extends AppCompatActivity {
                         editor.putString("ParkName",NationalParks.get(i));
                         editor.putString("ParkArea",Area.get(i));
                         editor.putString("ParkDistance",Distance.get(i));
-                        editor.putInt("NPID",NPIDonSearch.get(i));
+
+                        editor.putInt("NPID",NPIDonSearch.get(NPSearch.indexOf(selectNPName)));
                         editor.apply();
                         startActivity(new Intent(Home.this,ParkActivity.class));
                         break;
@@ -730,6 +732,7 @@ public class Home extends AppCompatActivity {
                         item.setDistance(cursorRoom.getInt(cursorRoom.getColumnIndex("Distance")));
                         item.setNPID(cursorRoom.getInt(cursorRoom.getColumnIndex("NPID")));
                         NPIDonSearch.add(cursorRoom.getInt(cursorRoom.getColumnIndex("NPID")));
+                        NPSearch.add(cursorRoom.getString(cursorRoom.getColumnIndex("NationalPark")));
                         ParksList.add(item);
                     }while (cursorRoom.moveToNext());
                 }
