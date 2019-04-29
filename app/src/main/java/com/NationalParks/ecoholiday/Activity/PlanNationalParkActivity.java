@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,7 @@ public class PlanNationalParkActivity extends AppCompatActivity {
     Button btnCamping,btnTrekking,btnReport;
     TextView cDate,cWeather;
     SharedPreferences sharedpreferences;
+
     int NPID;
     String parkName;
     ProgressDialog pDialog;

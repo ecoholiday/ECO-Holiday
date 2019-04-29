@@ -31,6 +31,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class ParkActivity extends AppCompatActivity implements  View.OnClickListener{
 
@@ -41,9 +42,15 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
     ListView lstActivity;
 
     //calendar
-    private Calendar mcalendar;
-    private EditText txtStart,txtEnd;
-    private int day,month,year;
+
+    EditText sdate,edate;
+    private static final DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    String dateTime;
+    Calendar dateSelected = Calendar.getInstance();
+    private DatePickerDialog datePickerDialog;
+    final Calendar startCalendar = Calendar.getInstance();
+    final Calendar endCalendar = Calendar.getInstance();
+    String myFormat = "MM/dd/yy"; //In which you need put here
 
     //calendar
 
@@ -60,8 +67,19 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
     ParkFacilityAdapter parkFacilityAdapter;
     public static ArrayList<ParkFacilityListItem> ParkCampingFacilityList,ParkTrekkingFacilityList,ParkActivityList ;
     ListView TrekkingData,CampingData;
-    private static final DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    String dateTime;
+
+    private void updateStartDate() {
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        sdate.setText(sdf.format(startCalendar.getTime()));
+    }
+    private void updateEndDate() {
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        edate.setText(sdf.format(endCalendar.getTime()));
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,7 +100,9 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
         //cWeather = (TextView) findViewById(R.id.weatherCount);
 
         //Calendar
-        txtStart=(EditText)findViewById(R.id.txtStart);
+        sdate =(EditText)findViewById(R.id.sdate);
+        edate =(EditText)findViewById(R.id.edate);
+
         /*day=mcalendar.get(Calendar.DAY_OF_MONTH);
         year=mcalendar.get(Calendar.YEAR);
         month=mcalendar.get(Calendar.MONTH);*/
@@ -99,13 +119,15 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
         longitude = sharedpreferences.getString("ParkLongitude","");
 
         TextView NParkName = (TextView)findViewById(R.id.NParkName);
-        TextView ParkDistance = (TextView)findViewById(R.id.ParkDistance);
+        final TextView ParkDistance = (TextView)findViewById(R.id.ParkDistance);
         TextView Area = (TextView)findViewById(R.id.Area);
         ImageButton btnNavigation = (ImageButton) findViewById(R.id.btnNavigation);
         NParkName.setText(parkName);
         ParkDistance.setText("Distance (KM): " + parkDistance);
         Area.setText("Area (ft2): "+area);
         //Toast.makeText(getApplicationContext()," "+ NPID +"",Toast.LENGTH_LONG).show();
+
+
 
 
 
@@ -138,11 +160,82 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
 
         new GetParksFacilityData().execute();
 
+        final DatePickerDialog.OnDateSetListener startDate = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                startCalendar.set(Calendar.YEAR, year);
+                startCalendar.set(Calendar.MONTH, monthOfYear);
+                startCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateStartDate();
+            }
+
+        };
+
+        final DatePickerDialog.OnDateSetListener endDate = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+
+                // TODO Auto-generated method stub
+                endCalendar.set(Calendar.YEAR, year);
+                endCalendar.set(Calendar.MONTH, monthOfYear);
+                endCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateEndDate();
+            }
+
+        };
+
+        edate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(sdate.getText().toString().equals("Start Date")){
+                    Toast.makeText(getApplicationContext(),"Please Select Start Date",Toast.LENGTH_LONG).show();
+                }else{
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(ParkActivity.this, endDate, endCalendar
+                            .get(Calendar.YEAR), endCalendar.get(Calendar.MONTH),
+                            endCalendar.get(Calendar.DAY_OF_MONTH));
+                    datePickerDialog.getDatePicker().setMinDate(startCalendar.getTimeInMillis());
+                    datePickerDialog.show();
+
+                }
+
+            }
+        });
+        sdate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(ParkActivity.this, startDate, startCalendar
+                        .get(Calendar.YEAR), startCalendar.get(Calendar.MONTH),
+                        startCalendar.get(Calendar.DAY_OF_MONTH));
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                datePickerDialog.show();
+            }
+        });
+
+
         btnReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentReport = new Intent(ParkActivity.this, report.class);
-                startActivity(intentReport);
+
+                if (sdate.getText().toString().equals("") || edate.getText().toString().equals("") ){
+                    Toast.makeText(getApplicationContext(), "Please select both start and end date", Toast.LENGTH_LONG).show();
+                }
+                else {
+
+                    Intent intentReport = new Intent(ParkActivity.this, report.class);
+
+                    intentReport.putExtra("startDate", sdate.getText().toString());
+                    intentReport.putExtra("endDate", edate.getText().toString());
+                    intentReport.putExtra("distance", ParkDistance.getText().toString());
+
+                    startActivity(intentReport);
+                }
             }
         });
 
@@ -156,7 +249,7 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
                 ParkActivityList.clear();
                 ParkActivityList = ParkCampingFacilityList;
                 ParkActivityList.addAll( ParkTrekkingFacilityList );
-                Toast.makeText(getApplicationContext(), ""+ ParkActivityList.size()+ "", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), ""+ ParkActivityList.size()+ "", Toast.LENGTH_LONG).show();
                 onCheckChanged();
 
             } else {
@@ -168,10 +261,18 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
             }
         }
         else if (chkTrek.isChecked()) {
+            if (!chkCamp.isChecked()){
 
             ParkActivityList.clear();
             ParkActivityList = ParkTrekkingFacilityList;
             onCheckChanged();
+            } else{
+                ParkActivityList.clear();
+                ParkActivityList = ParkCampingFacilityList;
+                ParkActivityList.addAll( ParkTrekkingFacilityList );
+                //Toast.makeText(getApplicationContext(), ""+ ParkActivityList.size()+ "", Toast.LENGTH_LONG).show();
+                onCheckChanged();
+            }
 
         }
         else {
@@ -265,7 +366,7 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
                 }else{
                     lstActivity.setAdapter(null);
                     lstActivity.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(),"Camping Data Not Available to this "+parkName,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"No Data Available for "+parkName,Toast.LENGTH_LONG).show();
                 }
 
 
@@ -290,7 +391,7 @@ public class ParkActivity extends AppCompatActivity implements  View.OnClickList
         }else{
             lstActivity.setAdapter(null);
             lstActivity.setVisibility(View.GONE);
-            Toast.makeText(getApplicationContext(),"Camping Data Not Available to this "+parkName,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"No Data Available for "+parkName,Toast.LENGTH_LONG).show();
         }
     }
 
