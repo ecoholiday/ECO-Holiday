@@ -250,16 +250,13 @@ public class Home extends AppCompatActivity {
 
 
         // list is updated
-        sharedpreferences = getSharedPreferences(PlanHoliday.MyPREFERENCES, Context.MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         distanceCount = (TextView) findViewById(R.id.count);
         seekDistance = (SeekBar) findViewById(R.id.seek_distance);
-        dayCount = (TextView) findViewById(R.id.day_count);
-        imgSearch = (ImageView) findViewById(R.id.img_search);
-        seekDays = (SeekBar) findViewById(R.id.seek_days);
         viewData = (ListView) findViewById(R.id.view_list);
         ParksList = new ArrayList<ParkItems>();
-        mDatabase = openOrCreateDatabase(PlanHoliday.DATABASE_NAME, MODE_PRIVATE, null);
+        mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
 
 
         new GetParksData().execute();

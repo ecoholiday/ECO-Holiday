@@ -3,25 +3,17 @@ package com.NationalParks.ecoholiday.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
-import android.util.Base64;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.NationalParks.ecoholiday.Activity.DistanceActivity;
 import com.NationalParks.ecoholiday.Activity.Home;
-import com.NationalParks.ecoholiday.Activity.Home;
-import com.NationalParks.ecoholiday.Activity.LandingPage;
 import com.NationalParks.ecoholiday.Activity.MapsActivity;
 import com.NationalParks.ecoholiday.Activity.ParkActivity;
-import com.NationalParks.ecoholiday.Activity.PlanNationalParkActivity;
 import com.NationalParks.ecoholiday.Item.ParkItems;
 import com.NationalParks.ecoholiday.R;
 
@@ -34,6 +26,7 @@ public class ParksAdapter extends BaseAdapter {
     LayoutInflater inflter;
     TextView nationalParkName,area,distance;
     ImageButton park_Navigation;
+    CardView listParkDetails;
 
     SharedPreferences sharedpreferences;
 
@@ -69,6 +62,7 @@ public class ParksAdapter extends BaseAdapter {
         area = (TextView) convertView.findViewById(R.id.Area);
         distance = (TextView) convertView.findViewById(R.id.ParkDistance);
         park_Navigation = (ImageButton) convertView.findViewById(R.id.btnNavigation);
+        listParkDetails = (CardView) convertView.findViewById(R.id.listParkDetails);
 
         final ParkItems item = parksList.get(position);
 
@@ -90,7 +84,7 @@ public class ParksAdapter extends BaseAdapter {
             }
         });
 
-        nationalParkName.setOnClickListener(new View.OnClickListener() {
+        listParkDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedpreferences.edit();

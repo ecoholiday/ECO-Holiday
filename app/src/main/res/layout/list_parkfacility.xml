@@ -13,14 +13,9 @@
         android:typeface="sans"
         android:fontFamily="sans-serif-condensed"
         android:paddingBottom="2dip"
-        android:layout_margin="20dp"
         android:textSize="20dp"
         android:textColor="#040404"
         android:text="National Park"
         android:textStyle="bold"/>
-
-
-
-
 
 </RelativeLayout>

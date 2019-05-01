@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="#25368A">
+        android:background="@color/imageBackground">
 
 
 
@@ -45,6 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:cardElevation="6dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
             android:layout_centerInParent="true"
             app:cardCornerRadius="12dp"
             android:layout_marginBottom="12dp"
@@ -84,30 +86,31 @@
 
     </LinearLayout>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="60dp">
 
 
         <FrameLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:id="@+id/worldFrame"
             android:visibility="invisible"></FrameLayout>
         <FrameLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:id="@+id/ausFrame"
             android:visibility="invisible"></FrameLayout>
         <FrameLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:id="@+id/vicFrame"
             android:visibility="invisible"></FrameLayout>
-    </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

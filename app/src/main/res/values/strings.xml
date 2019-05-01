@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ECO Holiday</string>
     <string name="title_activity_maps">ECO Holiday</string>
+    <string name="cardElevation">5dp</string>
 
 
     <string-array name="NationalParks">

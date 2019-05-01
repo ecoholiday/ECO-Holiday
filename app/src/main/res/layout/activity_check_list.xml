@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,7 +19,6 @@
         <TextView
             android:id="@+id/packingList"
             android:layout_width="match_parent"
-
             app:fontFamily="sans-serif-condensed"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -27,250 +26,154 @@
             android:background="@color/imageBackground"
             android:textColor="#FFAE76"
             android:textSize="40dp" />
-        <ScrollView
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="0dp">
-
-            <TableLayout
-                android:id="@+id/tableLayout1"
+            android:layout_weight="1"
+            app:cardUseCompatPadding="true"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="15dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/table_shape"
-                android:layout_margin="10dp"
-                android:padding="10dp">
+                android:gravity="center"
+                android:text="clothes"
+                android:layout_marginLeft="5dp"
+                android:textColor="#F9AA33"
+                android:textSize="20dp" />
+            <CheckBox
+                android:id="@+id/chkSirts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shirts / Tanks"/>
 
-                <TableRow
-                    android:id="@+id/tableRow"
-                    android:layout_width="match_parent"
+
+            <CheckBox
+                android:id="@+id/chkJeans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jeans / Shorts"/>
+
+            <CheckBox
+                android:id="@+id/chkCoats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coats / Sweaters"/>
+
+            <CheckBox
+                android:id="@+id/chkSleepwear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sleepwear"/>
+
+            <CheckBox
+                android:id="@+id/chkUnder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Underwear"/>
+
+
+            <CheckBox
+                android:id="@+id/chkSocks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Socks"/>
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardUseCompatPadding="true"
+            app:cardBackgroundColor="@color/imageBackground"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="15dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Shoes"
+                android:textColor="#F9AA33"
+                android:textSize="20dp" />
+                <CheckBox
+                    android:id="@+id/chkTennis"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    android:gravity="center_horizontal" >
+                    android:text="Tennis Shoes"/>
+                <CheckBox
+                    android:id="@+id/chkSandals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sandals"/>
+                <CheckBox
+                    android:id="@+id/chkFlips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flip Flops"/>
+                <CheckBox
+                    android:id="@+id/chkWShoes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weather Shoes"/>
 
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/imageBackground"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="12dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                     <TextView
-                        android:id="@+id/travel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:textAllCaps="true"
-                        android:text="clothes"
+                        android:gravity="center"
+                        android:text="Extras"
+                        android:layout_marginLeft="5dp"
                         android:textColor="#F9AA33"
-                        android:textSize="25dp" />
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRow1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkSirts"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Shirts / Tanks"/>
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRow2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkJeans"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Jeans / Shorts"/>
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRow3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkCoats"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Coats / Sweaters"/>
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRow4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkSleepwear"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sleepwear"/>
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRow5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkUnder"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Underwear"/>
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRow6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkSocks"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Socks"/>
-
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/tableRows"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    android:gravity="center_horizontal" >
-
-                    <TextView
-                        android:id="@+id/travel1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:textAllCaps="true"
-                        android:text="shoes"
-                        android:textColor="#F9AA33"
-                        android:textSize="25dp" />
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRows1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkTennis"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tennis Shoes"/>
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRows2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkSandals"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sandals"/>
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRows3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkFlips"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Flip Flops"/>
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRows4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
-                    <CheckBox
-                        android:id="@+id/chkWShoes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Weather Shoes"/>
-
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/tableRowss"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    android:gravity="center_horizontal" >
-
-                    <TextView
-                        android:id="@+id/trave2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:textAllCaps="true"
-                        android:text="other items"
-                        android:textColor="#F9AA33"
-                        android:textSize="25dp" />
-
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
+                        android:textSize="20dp" />
                     <CheckBox
                         android:id="@+id/chkHats"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hats"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
 
                     <CheckBox
                         android:id="@+id/check22"
@@ -278,14 +181,6 @@
                         android:layout_height="wrap_content"
                         android:text="Bags"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
 
                     <CheckBox
                         android:id="@+id/chkSlippers"
@@ -293,14 +188,7 @@
                         android:layout_height="wrap_content"
                         android:text="Slippers"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
+
 
                     <CheckBox
                         android:id="@+id/chkSunglasses"
@@ -308,14 +196,6 @@
                         android:layout_height="wrap_content"
                         android:text="Sunglasses"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
 
                     <CheckBox
                         android:id="@+id/chkSunCream"
@@ -323,29 +203,36 @@
                         android:layout_height="wrap_content"
                         android:text="Sun Cream"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
+                </LinearLayout>
 
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/imageBackground"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="12dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Others"
+                        android:textColor="#F9AA33"
+                        android:textSize="20dp" />
                     <CheckBox
                         android:id="@+id/chkBlanket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Travel blanket"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
 
                     <CheckBox
                         android:id="@+id/chkDocs"
@@ -353,14 +240,6 @@
                         android:layout_height="wrap_content"
                         android:text="Travel Documents"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
 
                     <CheckBox
                         android:id="@+id/chkBattery"
@@ -368,29 +247,13 @@
                         android:layout_height="wrap_content"
                         android:text="Battery"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
-
                     <CheckBox
                         android:id="@+id/chkCamera"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Camera"/>
 
-                </TableRow>
-                <TableRow
-                    android:id="@+id/tableRowss10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:background="@drawable/table_shape"
-                    >
+
 
                     <CheckBox
                         android:id="@+id/chkMaps"
@@ -398,9 +261,13 @@
                         android:layout_height="wrap_content"
                         android:text="Maps"/>
 
-                </TableRow>
-            </TableLayout>
-        </ScrollView>
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

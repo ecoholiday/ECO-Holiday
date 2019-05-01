@@ -1,6 +1,7 @@
 package com.NationalParks.ecoholiday.Activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -73,10 +74,16 @@ public class Statistics extends AppCompatActivity {
         trans.add(R.id.worldFrame,frag).commit();
         worldFrame.setVisibility(View.VISIBLE);
 
-        CardView cardWorld = (CardView)findViewById(R.id.cardWorld);
+        final CardView cardWorld = (CardView)findViewById(R.id.cardWorld);
+        final CardView cardAus = (CardView)findViewById(R.id.cardAus);
+        final CardView cardVic = (CardView)findViewById(R.id.cardVic);
+
         cardWorld.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cardWorld.setBackgroundColor(Color.parseColor("#FFAE76"));
+                cardAus.setBackgroundColor(Color.parseColor("#ffffff"));
+                cardVic.setBackgroundColor(Color.parseColor("#ffffff"));
 
                 FragmentManager manager = getSupportFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
@@ -94,10 +101,13 @@ public class Statistics extends AppCompatActivity {
 
             }
         });
-        CardView cardAus = (CardView)findViewById(R.id.cardAus);
+
         cardAus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cardAus.setBackgroundColor(Color.parseColor("#FFAE76"));
+                cardWorld.setBackgroundColor(Color.parseColor("#ffffff"));
+                cardVic.setBackgroundColor(Color.parseColor("#ffffff"));
 
                 FragmentManager manager = getSupportFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
@@ -115,10 +125,13 @@ public class Statistics extends AppCompatActivity {
         });
 
         // on clicking victoria card
-        CardView cardVic = (CardView)findViewById(R.id.cardVic);
+
         cardVic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cardVic.setBackgroundColor(Color.parseColor("#FFAE76"));
+                cardAus.setBackgroundColor(Color.parseColor("#ffffff"));
+                cardWorld.setBackgroundColor(Color.parseColor("#ffffff"));
 
                 // create a fragment and append the chart to the victoria frame
                 FragmentManager manager = getSupportFragmentManager();
