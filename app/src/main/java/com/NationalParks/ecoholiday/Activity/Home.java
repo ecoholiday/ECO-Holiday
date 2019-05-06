@@ -4,13 +4,16 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -207,6 +210,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentExplore = new Intent(Home.this, Statistics.class);
+                progressDialogueShowClose();
                 startActivity(intentExplore);
 
             }
@@ -217,6 +221,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent imgHelp = new Intent(Home.this, Help.class);
+                progressDialogueShowClose();
                 startActivity(imgHelp);
 
             }
@@ -227,6 +232,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent imgChecklist = new Intent(Home.this, CheckList.class);
+                progressDialogueShowClose();
                 startActivity(imgChecklist);
 
             }
@@ -289,8 +295,7 @@ public class Home extends AppCompatActivity {
         }
 
          try {
-            PlacePicker.IntentBuilder intentBuilder =
-                    new PlacePicker.IntentBuilder();
+            PlacePicker.IntentBuilder intentBuilder = new PlacePicker.IntentBuilder();
 
             Intent intent = intentBuilder.build(Home.this);
             startActivityForResult(intent, START_PLACE_PICKER_REQUEST);
@@ -327,11 +332,6 @@ public class Home extends AppCompatActivity {
 
                     }
                 }
-               /* if(searchNPID>=0){
-                    new GetCampingData().execute();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Select National Park",Toast.LENGTH_LONG).show();
-                }*/
             }
         });
 
@@ -771,6 +771,21 @@ public class Home extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void progressDialogueShowClose(){
+        final ProgressDialog progressDialog = ProgressDialog.show(Home.this,
+                "Loading","Please Wait...");
+        progressDialog.setCancelable(true);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                progressDialog.dismiss();
+
+            }
+        }, 500);
+
     }
 
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/camp2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+        <AutoCompleteTextView
+            android:id="@+id/trekkingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:drawableRight="@drawable/places_ic_search"
+            android:background="@drawable/table_shape"
+            android:inputType="textCapCharacters"
+            android:hint="Enter National Park Name">
+            <requestFocus />
+        </AutoCompleteTextView>
+
+
+    </RelativeLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/table_shape"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/trekkingList"
+        android:visibility="gone">
+
+    </ListView>
+
+
+</android.support.constraint.ConstraintLayout>

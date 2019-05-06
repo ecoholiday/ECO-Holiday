@@ -106,19 +106,22 @@ public class MapsActivity extends AppCompatActivity implements GoogleApiClient.C
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.clear();
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setZoomGesturesEnabled(true);
+        mMap.getUiSettings().setCompassEnabled(true);
         Log.d("mylog", "Added Markers");
         mMap.addMarker(place1);
         mMap.addMarker(place2);
 
         CameraPosition googlePlex = CameraPosition.builder()
-                .target(new LatLng(Double.parseDouble(originLatitude),Double.parseDouble(originLongitude)))
-                .zoom(12)
+                .target(new LatLng(Double.parseDouble(destinationLatitude),Double.parseDouble(destinationLongitude)))
+                .zoom(distance(originLatitude,originLongitude,destinationLatitude,destinationLongitude))
                 .bearing(0)
                 .tilt(45)
                 .build();
 
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 5000, null);
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 2500, null);
     }
 
     private String getUrl(LatLng origin, LatLng dest, String directionMode) {
@@ -142,6 +145,8 @@ public class MapsActivity extends AppCompatActivity implements GoogleApiClient.C
         if (currentPolyline != null)
             currentPolyline.remove();
         currentPolyline = mMap.addPolyline((PolylineOptions) values[0]);
+        currentPolyline.setColor(0x0000ff00);
+        currentPolyline.setWidth(8);
     }
 
     //runtime permission method
@@ -156,7 +161,7 @@ public class MapsActivity extends AppCompatActivity implements GoogleApiClient.C
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
                         // check if all permissions are granted
                         if (report.areAllPermissionsGranted()) {
-                            Toast.makeText(getApplicationContext(), "All permissions are granted by user!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "All permissions are granted by user!", Toast.LENGTH_SHORT).show();
                         }
 
                         // check for permanent denial of any permission
@@ -304,7 +309,12 @@ public class MapsActivity extends AppCompatActivity implements GoogleApiClient.C
             getDirection.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    new FetchURL(MapsActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
+
+                    Uri gmmIntentUri = Uri.parse("google.navigation:q="+destinationLatitude+","+destinationLongitude);
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    startActivity(mapIntent);
+
                 }
             });
 
@@ -313,8 +323,34 @@ public class MapsActivity extends AppCompatActivity implements GoogleApiClient.C
             mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mapNearBy);
             mapFragment.getMapAsync(this);
             isFirstTime = false;
+            new FetchURL(MapsActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
         }
 
+    }
+    public int distance(String lat1, String lon1, String lat2, String lon2) {
+        double calcuDist = 0;
+
+
+        double radlat1 = 3.14 * Double.parseDouble(lat1)/180;
+        double radlat2 = 3.14 * Double.parseDouble(lat2)/180;
+        double theta = Double.parseDouble(lon1)-Double.parseDouble(lon2);
+        double radtheta = 3.14 * theta/180;
+        calcuDist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        if (calcuDist > 1) {
+            calcuDist = 1;
+        }
+        calcuDist = Math.acos(calcuDist);
+
+        if(calcuDist <0.006){
+            return 11;
+        } else if (calcuDist < 0.01){
+            return 9;
+        }else if (calcuDist<0.05){
+            return 7;
+        }
+        else {
+            return 6;
+        }
     }
 
 }

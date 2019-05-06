@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">ECO Holiday</string>
     <string name="title_activity_maps">ECO Holiday</string>
-    <string name="cardElevation">5dp</string>
 
 
     <string-array name="NationalParks">
@@ -60,7 +59,6 @@
         <item>48202</item>
         <item>3,59,855</item>
         <item>77229</item>
-
 
 
     </string-array>
@@ -457,6 +455,14 @@
 
 
     </string-array>
+    <string name="title_activity_navigation_home">NavigationHome</string>
+    <string name="title_home">Home</string>
+    <string name="title_checklist">Check list</string>
+    <string name="title_stats">Stats</string>
+    <string name="title_help">Help</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

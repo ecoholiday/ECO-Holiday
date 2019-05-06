@@ -1,6 +1,8 @@
 package com.NationalParks.ecoholiday.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,7 @@ public class CheckList extends AppCompatActivity {
         imgExplore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialogueShowClose();
                 Intent intentExplore = new Intent(CheckList.this, Home.class);
                 startActivity(intentExplore);
 
@@ -33,6 +36,7 @@ public class CheckList extends AppCompatActivity {
         imgStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialogueShowClose();
                 Intent imgHelp = new Intent(CheckList.this, Statistics.class);
                 startActivity(imgHelp);
             }
@@ -42,10 +46,25 @@ public class CheckList extends AppCompatActivity {
         imgHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ProgressDialog.show(CheckList.this, "Loading", "Wait while loading...");
                 Intent imgChecklist = new Intent(CheckList.this, Help.class);
                 startActivity(imgChecklist);
 
             }
         });
+    }
+    public void progressDialogueShowClose(){
+        final ProgressDialog progressDialog = ProgressDialog.show(CheckList.this,
+                "Loading","Please Wait...");
+        progressDialog.setCancelable(true);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                progressDialog.dismiss();
+
+            }
+        }, 500);
+
     }
 }
