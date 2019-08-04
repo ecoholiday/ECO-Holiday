@@ -6,4 +6,4 @@ This consists of all the projects I have worked on that helped me to improve my 
 
 ## Is it working
 
-<h3> Is it working </h3>
+<a href="https://linkedin.com/in/charithesh-reddy/"><h3> Is it working </h3> </a>
