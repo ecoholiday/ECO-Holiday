@@ -6,6 +6,6 @@ This consists of all the projects I have worked on that helped me to improve my 
 
 ## EDA on AFL
 
-<a href="https://linkedin.com/in/charithesh-reddy/"><h3> Is it working </h3> </a>
+<h3><a href="https://linkedin.com/in/charithesh-reddy/"> Is it working </a></h3> 
 
 ## 
