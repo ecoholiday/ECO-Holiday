@@ -1,8 +1,6 @@
-# ECOHol
+# Data Science Portfolio - Charithesh Reddy
 
-
-### welcome
-
+I am interested in new data science opportunities, please contact me on my Linkedin page for business purpose
 
 <h3> Is it working </h3>
 
