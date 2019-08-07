@@ -7,4 +7,6 @@ This consists of all the projects I have worked on that helped me to improve my 
 <h3><a href=""> EDA on Boston crimes </a></h3> 
 
 
-## 
+## Below are few data science related algorithms 
+<h4><a href=""> KNN regressor </a></h4>
+<h4><a href=""> KNN regressor </a></h4>
